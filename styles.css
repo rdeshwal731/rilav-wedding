@@ -56,7 +56,7 @@ html {
 
 body {
     font-family: var(--font-body);
-    background: linear-gradient(135deg, #FFEBEE 0%, #F8BBD0 25%, #E1BEE7 50%, #D1C4E9 100%);
+    background: linear-gradient(135deg, #FFF5E6 0%, #FFE4CC 15%, #FFDAB9 30%, #FFB6C1 50%, #DDA0DD 70%, #E6E6FA 100%);
     color: var(--text-dark);
     overflow-x: hidden;
     min-height: 100vh;
@@ -632,21 +632,21 @@ section.revealed {
 }
 
 .bride-portrait-footer {
-    position: absolute;
-    left: 5%;
-    bottom: 10%;
-    width: 220px;
-    height: 300px;
+    position: relative;
+    width: 280px;
+    height: 380px;
     background-size: cover;
     background-position: center;
-    border-radius: 15px;
+    border-radius: 20px;
     box-shadow: 
-        0 15px 40px rgba(255, 107, 157, 0.4),
-        0 0 0 8px #FFF,
-        0 0 0 12px #FF6B9D,
-        0 0 0 16px #FFD700;
+        0 20px 50px rgba(139, 69, 19, 0.4),
+        0 0 0 10px #FFF,
+        0 0 0 15px #D2691E,
+        0 0 0 20px #FFD700,
+        0 0 0 25px #FF6347;
     z-index: 10;
-    opacity: 0.98;
+    opacity: 1;
+    margin-bottom: var(--spacing-lg);
 }
 
 @media (max-width: 768px) {
@@ -657,10 +657,8 @@ section.revealed {
 
 @media (min-width: 769px) and (max-width: 1024px) {
     .bride-portrait-footer {
-        width: 160px;
-        height: 220px;
-        left: 3%;
-        bottom: 5%;
+        width: 220px;
+        height: 300px;
     }
 }
 
@@ -989,17 +987,17 @@ section.revealed {
     width: 100%;
     height: 100%;
     background-size: cover;
-    background-position: 50% 20%;
+    background-position: 50% 15%;
     background-repeat: no-repeat;
     background-attachment: scroll;
-    opacity: 0.08;
+    opacity: 0.06;
     filter: blur(3px);
     z-index: 0;
 }
 
 @media (max-width: 768px) {
     .couple-photo-footer {
-        background-position: 50% 25%;
+        background-position: 50% 20%;
     }
 }
 

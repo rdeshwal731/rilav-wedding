@@ -324,14 +324,14 @@ body {
 .petal-5::before { background: linear-gradient(135deg, #FF4500 0%, #FF6347 100%); }
 .petal-5::after { background: linear-gradient(135deg, #FF6347 0%, #FF8C69 100%); }
 
-/* Wind-driven falling animations */
+/* Wind-driven falling animations - Start from just below browser bar */
 @keyframes cherryFallWind1 {
     0% {
-        top: -10%;
+        top: 0%;
         transform: translateX(0) rotate(0deg);
         opacity: 0;
     }
-    10% {
+    5% {
         opacity: 0.9;
     }
     50% {
@@ -340,11 +340,11 @@ body {
     75% {
         transform: translateX(-50px) rotate(270deg);
     }
-    90% {
-        opacity: 0.9;
+    95% {
+        opacity: 0.8;
     }
     100% {
-        top: 110%;
+        top: 100%;
         transform: translateX(30px) rotate(360deg);
         opacity: 0;
     }
@@ -352,11 +352,11 @@ body {
 
 @keyframes cherryFallWind2 {
     0% {
-        top: -10%;
+        top: 0%;
         transform: translateX(0) rotate(0deg);
         opacity: 0;
     }
-    10% {
+    5% {
         opacity: 0.9;
     }
     40% {
@@ -365,11 +365,11 @@ body {
     70% {
         transform: translateX(60px) rotate(300deg);
     }
-    90% {
-        opacity: 0.9;
+    95% {
+        opacity: 0.8;
     }
     100% {
-        top: 110%;
+        top: 100%;
         transform: translateX(-40px) rotate(450deg);
         opacity: 0;
     }
@@ -377,11 +377,11 @@ body {
 
 @keyframes cherryFallWind3 {
     0% {
-        top: -10%;
+        top: 0%;
         transform: translateX(0) rotate(0deg);
         opacity: 0;
     }
-    10% {
+    5% {
         opacity: 0.85;
     }
     30% {
@@ -394,10 +394,10 @@ body {
         transform: translateX(50px) rotate(340deg);
     }
     95% {
-        opacity: 0.8;
+        opacity: 0.7;
     }
     100% {
-        top: 110%;
+        top: 100%;
         transform: translateX(10px) rotate(400deg);
         opacity: 0;
     }
@@ -456,6 +456,7 @@ section.revealed {
 @media (min-width: 769px) {
     .couple-photo-bg {
         background-position: 50% 35%;
+        background-attachment: fixed;
     }
 }
 
@@ -672,6 +673,7 @@ section.revealed {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
+    background-attachment: scroll;
     opacity: 0.06;
     clip-path: polygon(30% 0, 100% 0, 100% 100%, 0% 100%);
 }
@@ -821,6 +823,28 @@ section.revealed {
     font-weight: 700;
 }
 
+.venue-link {
+    color: white;
+    text-decoration: none;
+    position: relative;
+    transition: var(--transition-fast);
+    cursor: pointer;
+}
+
+.venue-link:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+    transform: scale(1.02);
+    display: inline-block;
+}
+
+.venue-link::after {
+    content: ' 📍';
+    font-size: 1.2rem;
+    margin-left: 0.3rem;
+}
+
 .venue-address {
     font-size: 1rem;
     opacity: 0.9;
@@ -844,6 +868,7 @@ section.revealed {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
+    background-attachment: scroll;
     opacity: 0.05;
     filter: blur(3px);
     z-index: 0;

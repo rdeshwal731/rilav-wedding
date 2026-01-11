@@ -632,9 +632,8 @@ section.revealed {
 }
 
 .bride-portrait-footer {
-    position: relative;
-    width: 280px;
-    height: 380px;
+    width: 250px;
+    height: 340px;
     background-size: cover;
     background-position: center;
     border-radius: 20px;
@@ -646,7 +645,8 @@ section.revealed {
         0 0 0 25px #FF6347;
     z-index: 10;
     opacity: 1;
-    margin-bottom: var(--spacing-lg);
+    margin: 0 auto var(--spacing-xl) auto;
+    display: block;
 }
 
 @media (max-width: 768px) {
@@ -657,8 +657,8 @@ section.revealed {
 
 @media (min-width: 769px) and (max-width: 1024px) {
     .bride-portrait-footer {
-        width: 220px;
-        height: 300px;
+        width: 200px;
+        height: 280px;
     }
 }
 
@@ -1006,6 +1006,9 @@ section.revealed {
     text-align: center;
     position: relative;
     z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .blessing-message {

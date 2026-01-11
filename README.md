@@ -1,6 +1,6 @@
-# 💒 Riya & Lavesh - Wedding Invitation
+# 💒 Digital Wedding Invitation
 
-A beautiful, interactive digital wedding invitation built with HTML, CSS, and JavaScript. Features elegant animations, background music, and mobile-first responsive design.
+A beautiful, interactive digital wedding invitation template built with HTML, CSS, and JavaScript. Features elegant animations, background music, and mobile-first responsive design.
 
 ## ✨ Features
 
@@ -237,20 +237,19 @@ For the fastest loading:
    - Use Google PageSpeed Insights
    - Test on slow 3G connection
 
-## 📝 Event Details
+## 📝 Customizable Event Details
 
-**Wedding:** Riya & Lavesh
-**Date:** Friday, February 13, 2026
-**Venue:** Grand Dream Resort, Meerut
-
-**Schedule:**
-- Reception of Barat: 11:00 AM
-- Lunch: 1:00 PM
-- Vidai: 5:00 PM
+**The invitation includes:**
+- Customizable couple names
+- Flexible date and time
+- Venue information
+- Event schedule with multiple ceremonies
+- Sanskrit blessings and religious elements
+- Photo integration (background overlays and frames)
 
 ## 🙏 Credits
 
-Created with love for Riya & Lavesh's special day.
+A beautiful wedding invitation template for your special day.
 
 **Technologies Used:**
 - HTML5

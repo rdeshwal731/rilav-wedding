@@ -1,4 +1,4 @@
-# ⚡ Quick Start - Get Your Invitation Live in 10 Minutes!
+# ⚡ Quick Start - Digital Wedding Invitation Template
 
 ## What You Need to Do Next:
 

@@ -86,14 +86,42 @@ body {
     left: 0;
     width: 100%;
     height: 100vh;
-    background: linear-gradient(135deg, #FFEFD5 0%, #FFE4E1 25%, #E1BEE7 50%, #B2DFDB 75%, #C8E6C9 100%);
+    background: 
+        radial-gradient(ellipse at top right, rgba(255, 182, 193, 0.3) 0%, transparent 50%),
+        radial-gradient(ellipse at bottom left, rgba(255, 215, 0, 0.3) 0%, transparent 50%),
+        radial-gradient(ellipse at top left, rgba(255, 140, 0, 0.2) 0%, transparent 50%),
+        linear-gradient(135deg, #FFF8DC 0%, #FFE4E1 20%, #FFB6C1 40%, #DDA0DD 60%, #98D8C8 80%, #FFD700 100%);
     z-index: 1000;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     transition: var(--transition-smooth);
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 40px rgba(255, 140, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.card-front::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: 
+        repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(255, 215, 0, 0.05) 20px, rgba(255, 215, 0, 0.05) 40px);
+    animation: shimmer 20s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(50%, 50%);
+    }
 }
 
 .card-front.opening {
@@ -105,10 +133,17 @@ body {
 
 .card-cover-content {
     text-align: center;
-    padding: var(--spacing-md);
-    max-width: 500px;
+    padding: var(--spacing-lg);
+    max-width: 550px;
     position: relative;
+    z-index: 2;
     animation: fadeInScale 1s ease-out;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 30px;
+    backdrop-filter: blur(10px);
+    box-shadow: 
+        0 20px 60px rgba(255, 140, 0, 0.2),
+        0 0 0 1px rgba(255, 255, 255, 0.5);
 }
 
 @keyframes fadeInScale {
@@ -124,15 +159,38 @@ body {
 
 .floral-decoration {
     width: 100%;
-    height: 60px;
-    background-image: 
-        radial-gradient(circle, var(--accent-pink) 3px, transparent 3px),
-        radial-gradient(circle, var(--gold) 2px, transparent 2px),
-        radial-gradient(circle, var(--botanical-green) 2px, transparent 2px);
-    background-size: 40px 40px, 30px 30px, 20px 20px;
-    background-position: 0 0, 20px 20px, 10px 10px;
-    opacity: 0.4;
-    margin: var(--spacing-sm) 0;
+    height: 80px;
+    position: relative;
+}
+
+.floral-decoration::before,
+.floral-decoration::after {
+    content: '🌼 🌸 🌺 🌻 🌼';
+    position: absolute;
+    font-size: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    animation: float 3s ease-in-out infinite;
+}
+
+.floral-decoration.top::before {
+    top: 0;
+}
+
+.floral-decoration.bottom::before {
+    bottom: 0;
+    content: '🌼 🌻 🌺 🌸 🌼';
+    animation-delay: 1.5s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) translateY(-5px);
+    }
 }
 
 .ganesh-symbol {
@@ -156,18 +214,34 @@ body {
 
 .couple-names-cover {
     font-family: var(--font-heading);
-    font-size: 3rem;
-    color: var(--dark-green);
+    font-size: 3.5rem;
+    background: linear-gradient(135deg, #FF6B9D 0%, #FF8C00 50%, #FFD700 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     margin: var(--spacing-md) 0;
-    font-weight: 600;
+    font-weight: 700;
     line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .ampersand {
     font-style: italic;
-    color: var(--gold);
+    color: #FFD700;
     margin: 0 0.5rem;
-    font-size: 2.5rem;
+    font-size: 3rem;
+    animation: ampersandGlow 2s ease-in-out infinite;
+}
+
+@keyframes ampersandGlow {
+    0%, 100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.5));
+    }
+    50% {
+        transform: scale(1.1);
+        filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.8));
+    }
 }
 
 .wedding-text {

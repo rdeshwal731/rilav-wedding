@@ -645,20 +645,18 @@ section.revealed {
         0 0 0 25px #FF6347;
     z-index: 10;
     opacity: 1;
-    margin: 0 auto var(--spacing-xl) auto;
-    display: block;
+}
+
+@media (max-width: 1024px) {
+    .bride-portrait-footer {
+        width: 220px;
+        height: 300px;
+    }
 }
 
 @media (max-width: 768px) {
     .bride-portrait-footer {
         display: none;
-    }
-}
-
-@media (min-width: 769px) and (max-width: 1024px) {
-    .bride-portrait-footer {
-        width: 200px;
-        height: 280px;
     }
 }
 
@@ -974,10 +972,57 @@ section.revealed {
    FOOTER SECTION
    ============================================ */
 .footer-section {
-    background: linear-gradient(135deg, #FFEBEE 0%, #F8BBD0 25%, #E1BEE7 50%, #D1C4E9 100%);
+    background: linear-gradient(135deg, #FFF5E6 0%, #FFE4CC 15%, #FFDAB9 30%, #FFB6C1 50%, #DDA0DD 70%, #E6E6FA 100%);
     position: relative;
     margin: 0;
     padding-bottom: var(--spacing-lg);
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-layout {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: var(--spacing-xl);
+    max-width: 1200px;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.bride-section {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bride-caption {
+    text-align: center;
+    margin-top: var(--spacing-md);
+    max-width: 300px;
+}
+
+.footer-center {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+@media (max-width: 1024px) {
+    .footer-layout {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .bride-section {
+        margin-bottom: var(--spacing-lg);
+    }
 }
 
 .couple-photo-footer {
@@ -1006,9 +1051,6 @@ section.revealed {
     text-align: center;
     position: relative;
     z-index: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 .blessing-message {

@@ -219,6 +219,7 @@ body {
     background: var(--cream-bg);
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 .card-inside.visible {
@@ -282,7 +283,11 @@ body {
     box-shadow: 0 0 10px rgba(255, 165, 0, 0.7);
 }
 
-/* Different petal variations with wind effect */
+/* Different petal variations with wind effect - All start invisible */
+.petal {
+    visibility: hidden;
+}
+
 .petal-1 { 
     left: 5%; 
     animation: cherryFallWind1 18s ease-in-out infinite;
@@ -456,6 +461,12 @@ section {
     padding: var(--spacing-lg) var(--spacing-md);
     overflow: visible;
     z-index: 1;
+    margin: 0;
+}
+
+section:last-child {
+    margin-bottom: 0;
+    padding-bottom: var(--spacing-lg);
 }
 
 /* Scroll reveal animation */
@@ -701,6 +712,8 @@ section.revealed {
 .details-section {
     background: var(--cream-bg);
     position: relative;
+    justify-content: flex-start;
+    padding-left: var(--spacing-xl);
 }
 
 .couple-photo-side {
@@ -918,12 +931,18 @@ section.revealed {
     width: 100%;
     height: 100%;
     background-size: cover;
-    background-position: center center;
+    background-position: 50% 35%;
     background-repeat: no-repeat;
     background-attachment: scroll;
     opacity: 0.05;
     filter: blur(3px);
     z-index: 0;
+}
+
+@media (max-width: 768px) {
+    .couple-photo-footer {
+        background-position: center center;
+    }
 }
 
 .footer-content {
@@ -1054,6 +1073,11 @@ section.revealed {
     
     .couple-photo-side {
         width: 50%;
+    }
+    
+    .details-section {
+        justify-content: flex-start;
+        padding-left: 5rem;
     }
 }
 

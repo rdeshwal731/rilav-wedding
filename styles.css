@@ -1376,13 +1376,56 @@ section.revealed {
 
 .footer-layout {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     gap: var(--spacing-xl);
     max-width: 1200px;
     width: 100%;
     position: relative;
     z-index: 2;
+    padding: var(--spacing-xl) var(--spacing-md);
+}
+
+.bride-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bride-portrait-footer {
+    width: 250px;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 8px solid;
+    border-image: linear-gradient(135deg, #FFD700, #FF8C00, #FFD700) 1;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    margin-bottom: var(--spacing-md);
+}
+
+.bride-caption {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.footer-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 0;
+}
+
+/* Align green line/quote with blessing text by matching top position */
+.calendar-btn {
+    margin-bottom: var(--spacing-lg);
+    align-self: flex-start;
+}
+
+.footer-quote {
+    margin-top: 0;
+    align-self: flex-start;
 }
 
 .bride-section {
@@ -1392,13 +1435,11 @@ section.revealed {
     align-items: center;
 }
 
+
 .bride-caption {
     text-align: center;
     margin-top: 0;
     max-width: 300px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 }
 
 .footer-center {
@@ -1406,10 +1447,12 @@ section.revealed {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     text-align: center;
     padding-top: 0;
-    gap: var(--spacing-lg);
+}
+
+.calendar-btn {
+    margin-bottom: var(--spacing-lg);
 }
 
 @media (max-width: 1024px) {
@@ -1521,13 +1564,12 @@ section.revealed {
 }
 
 .footer-quote {
-    padding-top: 0;
+    padding-top: var(--spacing-sm);
     border-top: 2px solid var(--botanical-green);
     text-align: center;
     width: 100%;
     max-width: 500px;
     margin-top: 0;
-    padding-top: var(--spacing-sm);
 }
 
 .footer-quote p {

@@ -56,15 +56,25 @@
     // ============================================
     function playBackgroundMusic() {
         if (isMusicPlaying) return;
+        if (!backgroundMusic) {
+            console.error('Background music element not found');
+            return;
+        }
         
-        // Try to play music
+        // Set volume (0.0 to 1.0)
+        backgroundMusic.volume = 0.5;
+        
+        // Load the audio first
+        backgroundMusic.load();
+        
+        // Try to play music - user interaction (card tap) should allow autoplay
         const playPromise = backgroundMusic.play();
         
         if (playPromise !== undefined) {
             playPromise
                 .then(() => {
                     isMusicPlaying = true;
-                    console.log('Music started playing');
+                    console.log('Music started playing successfully');
                     // Track music play
                     trackEvent('music_started', {
                         'event_category': 'engagement',
@@ -72,20 +82,38 @@
                     });
                 })
                 .catch(error => {
-                    console.log('Autoplay prevented:', error);
-                    // Music autoplay was prevented by browser
-                    // User interaction (card tap) should allow it
-                    // Try again after a small delay
+                    console.log('Autoplay prevented, retrying:', error);
+                    // User interaction happened (card tap), so retry should work
                     setTimeout(() => {
                         backgroundMusic.play()
                             .then(() => {
                                 isMusicPlaying = true;
+                                console.log('Music started on retry');
+                                trackEvent('music_started', {
+                                    'event_category': 'engagement',
+                                    'event_label': 'background_music_playing_retry'
+                                });
                             })
                             .catch(e => {
-                                console.log('Music play failed:', e);
+                                console.error('Music play failed after retry:', e);
+                                // Try one more time with user gesture
+                                try {
+                                    backgroundMusic.play();
+                                    isMusicPlaying = true;
+                                } catch (finalError) {
+                                    console.error('Final music play attempt failed:', finalError);
+                                }
                             });
-                    }, 100);
+                    }, 200);
                 });
+        } else {
+            // Fallback for older browsers
+            try {
+                backgroundMusic.play();
+                isMusicPlaying = true;
+            } catch (e) {
+                console.error('Music play failed (fallback):', e);
+            }
         }
     }
     
@@ -212,12 +240,16 @@
     // ============================================
     function preloadAssets() {
         // Preload music file
-        backgroundMusic.load();
+        if (backgroundMusic) {
+            backgroundMusic.preload = 'auto';
+            // Don't call load() here - wait for user interaction
+            // backgroundMusic.load();
+        }
         
         // Preload critical images
         const criticalImages = [
             'images/ganesh.png',
-            'images/couple-1.jpg'
+            'images/couple-1.png'
         ];
         
         criticalImages.forEach(src => {
@@ -241,9 +273,38 @@
     // ERROR HANDLING
     // ============================================
     function handleMusicError() {
+        if (!backgroundMusic) return;
+        
         backgroundMusic.addEventListener('error', (e) => {
             console.error('Music loading error:', e);
-            // Silently fail - invitation still works without music
+            console.error('Audio error details:', {
+                error: backgroundMusic.error,
+                networkState: backgroundMusic.networkState,
+                readyState: backgroundMusic.readyState
+            });
+            
+            // Try to load fallback source if available
+            if (backgroundMusic.error && backgroundMusic.error.code === 4) {
+                console.log('Trying fallback audio source...');
+                // The browser will automatically try the next source in the list
+            }
+        });
+        
+        // Listen for when audio can play
+        backgroundMusic.addEventListener('canplaythrough', () => {
+            console.log('Audio is ready to play');
+        });
+        
+        // Listen for when audio starts playing
+        backgroundMusic.addEventListener('playing', () => {
+            console.log('Audio is now playing');
+            isMusicPlaying = true;
+        });
+        
+        // Listen for when audio is paused
+        backgroundMusic.addEventListener('pause', () => {
+            console.log('Audio paused');
+            isMusicPlaying = false;
         });
     }
     

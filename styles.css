@@ -1508,6 +1508,66 @@ section.revealed {
     .couple-photo-footer {
         background-position: 50% 20%;
     }
+    
+    /* Footer mobile optimizations */
+    .footer-layout {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spacing-lg);
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+    
+    .bride-section {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .bride-portrait-footer {
+        width: 200px;
+        height: 250px;
+    }
+    
+    .bride-caption {
+        max-width: 100%;
+        margin-top: var(--spacing-sm);
+    }
+    
+    .blessing-text {
+        font-size: 1.2rem;
+    }
+    
+    .blessing-text-sub {
+        font-size: 1rem;
+    }
+    
+    .footer-center {
+        width: 100%;
+        max-width: 100%;
+        margin-left: 0;
+        flex: 1 1 auto;
+        align-items: center;
+        min-height: auto;
+    }
+    
+    .calendar-btn,
+    .contact-btn {
+        width: 100%;
+        max-width: 300px;
+        padding: 1rem 2rem;
+        font-size: 1rem;
+        margin-bottom: var(--spacing-md);
+        margin-top: 0;
+        /* Ensure touch target is at least 44px (iOS recommendation) */
+        min-height: 44px;
+    }
+    
+    .contact-btn {
+        margin-top: var(--spacing-sm);
+    }
+    
+    .footer-quote-wrapper {
+        display: none;
+    }
 }
 
 .footer-content {

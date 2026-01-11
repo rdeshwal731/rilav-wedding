@@ -853,6 +853,22 @@ section.revealed {
     font-weight: 700;
 }
 
+.venue-pin {
+    font-size: 1.3rem;
+    margin-right: 0.5rem;
+    display: inline-block;
+    animation: pinBounce 2s ease-in-out infinite;
+}
+
+@keyframes pinBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-3px);
+    }
+}
+
 .venue-link {
     color: white;
     text-decoration: none;
@@ -867,12 +883,6 @@ section.revealed {
     text-underline-offset: 4px;
     transform: scale(1.02);
     display: inline-block;
-}
-
-.venue-link::before {
-    content: '📍 ';
-    font-size: 1.2rem;
-    margin-right: 0.5rem;
 }
 
 .venue-address {

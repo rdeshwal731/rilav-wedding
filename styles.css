@@ -86,7 +86,7 @@ body {
     left: 0;
     width: 100%;
     height: 100vh;
-    background: linear-gradient(135deg, #0A1929 0%, #1A3A5A 30%, #2E5C8A 60%, #1A3A5A 90%, #0A1929 100%);
+    background: linear-gradient(135deg, #050F1A 0%, #0F1F35 30%, #1A2F4A 60%, #0F1F35 90%, #050F1A 100%);
     z-index: 1000;
     display: flex;
     align-items: center;
@@ -96,51 +96,90 @@ body {
     overflow: hidden;
 }
 
-/* Four Corner Mandalas - Rotating Circles - HIGHLY DETAILED */
+/* Four Corner Mandalas - Rotating Circles - 4X MORE DETAILED */
 .mandala-corner {
     position: absolute;
     width: 150px;
     height: 150px;
     border-radius: 50%;
     background-image: 
-        /* Outer petal layer - 16 petals */
+        /* Layer 1: Outer petal layer - 32 petals (doubled) */
         repeating-conic-gradient(from 0deg, 
-            #FFD700 0deg 11.25deg, 
-            #FF8C00 11.25deg 22.5deg,
-            #FFA500 22.5deg 33.75deg,
-            #FFD700 33.75deg 45deg
+            #FFD700 0deg 5.625deg, 
+            #FF8C00 5.625deg 11.25deg,
+            #FFA500 11.25deg 16.875deg,
+            #FFD700 16.875deg 22.5deg,
+            #FF8C00 22.5deg 28.125deg,
+            #FFA500 28.125deg 33.75deg,
+            #FFD700 33.75deg 39.375deg,
+            #FF8C00 39.375deg 45deg
         ),
-        /* Second petal layer - offset */
-        repeating-conic-gradient(from 5.625deg,
-            transparent 0deg 5deg,
-            #FFA500 5deg 11.25deg,
-            transparent 11.25deg 16.25deg
+        /* Layer 2: Second petal layer - offset, more detailed */
+        repeating-conic-gradient(from 2.8125deg,
+            transparent 0deg 2.5deg,
+            #FFA500 2.5deg 5.625deg,
+            transparent 5.625deg 8.125deg,
+            #FF8C00 8.125deg 11.25deg,
+            transparent 11.25deg 13.75deg,
+            #FFD700 13.75deg 16.875deg,
+            transparent 16.875deg 19.375deg
         ),
-        /* Inner decorative dots */
+        /* Layer 3: Third petal layer - fine details */
+        repeating-conic-gradient(from 1.40625deg,
+            rgba(255, 215, 0, 0.8) 0deg 1.5deg,
+            transparent 1.5deg 3deg,
+            rgba(255, 140, 0, 0.7) 3deg 4.5deg,
+            transparent 4.5deg 6deg
+        ),
+        /* Layer 4: Inner decorative dots - doubled */
         repeating-conic-gradient(from 0deg,
-            #FFD700 0deg 2deg,
-            transparent 2deg 4deg
+            #FFD700 0deg 1deg,
+            transparent 1deg 2deg,
+            #FFA500 2deg 3deg,
+            transparent 3deg 4deg
         ),
-        /* Ornate concentric rings */
+        /* Layer 5: Fine dot pattern */
+        repeating-conic-gradient(from 0.5deg,
+            rgba(255, 215, 0, 0.6) 0deg 0.75deg,
+            transparent 0.75deg 1.5deg
+        ),
+        /* Layer 6: Ornate concentric rings - 4x more rings */
         radial-gradient(circle, 
-            transparent 0%, transparent 8%,
-            #FFD700 8%, #FF8C00 10%, transparent 12%,
-            transparent 18%, #FFA500 18%, #FFD700 20%, transparent 22%,
-            transparent 28%, #FF8C00 28%, transparent 30%,
-            transparent 35%, #FFA500 35%, #FFD700 37%, transparent 39%,
-            transparent 42%, rgba(255, 140, 0, 0.8) 42%, rgba(255, 215, 0, 0.9) 44%, transparent 46%,
-            transparent 50%, rgba(255, 165, 0, 0.6) 50%, transparent 52%
+            transparent 0%, transparent 6%,
+            #FFD700 6%, #FF8C00 7%, transparent 8%,
+            transparent 10%, #FFA500 10%, #FFD700 11%, transparent 12%,
+            transparent 14%, #FF8C00 14%, #FFA500 15%, transparent 16%,
+            transparent 18%, #FFD700 18%, #FF8C00 19%, transparent 20%,
+            transparent 22%, #FFA500 22%, #FFD700 23%, transparent 24%,
+            transparent 26%, #FF8C00 26%, transparent 27%,
+            transparent 28%, #FFA500 28%, #FFD700 29%, transparent 30%,
+            transparent 32%, #FF8C00 32%, #FFA500 33%, transparent 34%,
+            transparent 35%, #FFD700 35%, #FF8C00 36%, transparent 37%,
+            transparent 38%, #FFA500 38%, #FFD700 39%, transparent 40%,
+            transparent 41%, rgba(255, 140, 0, 0.9) 41%, rgba(255, 215, 0, 1) 42%, transparent 43%,
+            transparent 44%, rgba(255, 165, 0, 0.8) 44%, rgba(255, 140, 0, 0.7) 45%, transparent 46%,
+            transparent 47%, rgba(255, 215, 0, 0.6) 47%, transparent 48%,
+            transparent 49%, rgba(255, 140, 0, 0.5) 49%, transparent 50%,
+            transparent 51%, rgba(255, 165, 0, 0.4) 51%, transparent 52%
         ),
-        /* Center decorative element */
+        /* Layer 7: Additional decorative rings */
+        radial-gradient(circle,
+            transparent 0%, transparent 4%,
+            rgba(255, 215, 0, 0.7) 4%, rgba(255, 140, 0, 0.6) 5%, transparent 6%,
+            transparent 52%, rgba(255, 215, 0, 0.3) 52%, transparent 53%
+        ),
+        /* Layer 8: Center decorative element - more detailed */
         radial-gradient(circle at center,
-            #FFD700 0%, #FF8C00 15%, transparent 20%
+            #FFD700 0%, #FF8C00 5%, transparent 8%,
+            transparent 10%, #FFA500 10%, #FFD700 12%, transparent 14%,
+            transparent 15%, #FF8C00 15%, transparent 18%
         );
     animation: mandalaRotate 40s linear infinite;
     opacity: 0.85;
     box-shadow: 
-        0 0 40px rgba(255, 140, 0, 0.6),
-        inset 0 0 30px rgba(255, 215, 0, 0.3);
-    border: 2px solid rgba(255, 215, 0, 0.4);
+        0 0 50px rgba(255, 140, 0, 0.7),
+        inset 0 0 40px rgba(255, 215, 0, 0.4);
+    border: 3px solid rgba(255, 215, 0, 0.5);
 }
 
 .mandala-top-left {
@@ -167,64 +206,124 @@ body {
     animation-delay: -20s;
 }
 
-/* Large Central Mandala - Rotating Circle - HIGHLY DETAILED & ORNATE */
+/* Large Central Mandala - Rotating Circle - 4X MORE DETAILED & ORNATE */
 .mandala-central {
     position: absolute;
     width: 500px;
     height: 500px;
     border-radius: 50%;
     background-image: 
-        /* Layer 1: Outer large petals - 24 petals */
+        /* Layer 1: Outer large petals - 48 petals (doubled) */
         repeating-conic-gradient(from 0deg, 
-            #FFD700 0deg 7.5deg, 
-            #FF8C00 7.5deg 15deg,
-            #FFA500 15deg 22.5deg,
-            #FFD700 22.5deg 30deg
+            #FFD700 0deg 3.75deg, 
+            #FF8C00 3.75deg 7.5deg,
+            #FFA500 7.5deg 11.25deg,
+            #FFD700 11.25deg 15deg,
+            #FF8C00 15deg 18.75deg,
+            #FFA500 18.75deg 22.5deg,
+            #FFD700 22.5deg 26.25deg,
+            #FF8C00 26.25deg 30deg
         ),
-        /* Layer 2: Medium petals - offset */
-        repeating-conic-gradient(from 3.75deg,
-            transparent 0deg 3deg,
-            #FFA500 3deg 7.5deg,
-            transparent 7.5deg 10.5deg,
-            #FF8C00 10.5deg 15deg,
-            transparent 15deg 18deg
-        ),
-        /* Layer 3: Small decorative petals */
+        /* Layer 2: Second large petal layer - offset */
         repeating-conic-gradient(from 1.875deg,
-            rgba(255, 215, 0, 0.9) 0deg 2deg,
-            transparent 2deg 4deg,
-            rgba(255, 140, 0, 0.8) 4deg 6deg,
-            transparent 6deg 8deg
+            transparent 0deg 1.5deg,
+            #FFA500 1.5deg 3.75deg,
+            transparent 3.75deg 5.25deg,
+            #FF8C00 5.25deg 7.5deg,
+            transparent 7.5deg 9deg,
+            #FFD700 9deg 11.25deg,
+            transparent 11.25deg 12.75deg,
+            #FFA500 12.75deg 15deg,
+            transparent 15deg 16.5deg
         ),
-        /* Layer 4: Ornate ring pattern */
+        /* Layer 3: Medium petals - more detailed */
+        repeating-conic-gradient(from 3.75deg,
+            transparent 0deg 2deg,
+            #FFA500 2deg 4deg,
+            transparent 4deg 6deg,
+            #FF8C00 6deg 8deg,
+            transparent 8deg 10deg,
+            #FFD700 10deg 12deg,
+            transparent 12deg 14deg
+        ),
+        /* Layer 4: Small decorative petals - doubled */
+        repeating-conic-gradient(from 1.875deg,
+            rgba(255, 215, 0, 0.9) 0deg 1deg,
+            transparent 1deg 2deg,
+            rgba(255, 140, 0, 0.8) 2deg 3deg,
+            transparent 3deg 4deg,
+            rgba(255, 165, 0, 0.7) 4deg 5deg,
+            transparent 5deg 6deg
+        ),
+        /* Layer 5: Fine decorative petals */
+        repeating-conic-gradient(from 0.9375deg,
+            rgba(255, 215, 0, 0.7) 0deg 0.75deg,
+            transparent 0.75deg 1.5deg,
+            rgba(255, 140, 0, 0.6) 1.5deg 2.25deg,
+            transparent 2.25deg 3deg
+        ),
+        /* Layer 6: Ornate ring pattern - doubled */
         repeating-conic-gradient(from 0deg,
-            #FFD700 0deg 1.5deg,
-            transparent 1.5deg 3deg
+            #FFD700 0deg 0.75deg,
+            transparent 0.75deg 1.5deg,
+            #FFA500 1.5deg 2.25deg,
+            transparent 2.25deg 3deg
         ),
-        /* Layer 5: Multiple concentric decorative rings */
+        /* Layer 7: Fine ring pattern */
+        repeating-conic-gradient(from 0.375deg,
+            rgba(255, 215, 0, 0.8) 0deg 0.5deg,
+            transparent 0.5deg 1deg
+        ),
+        /* Layer 8: Multiple concentric decorative rings - 4x more rings */
         radial-gradient(circle, 
-            transparent 0%, transparent 10%,
-            #FFD700 10%, #FF8C00 12%, transparent 14%,
-            transparent 18%, #FFA500 18%, #FFD700 20%, transparent 22%,
-            transparent 26%, #FF8C00 26%, #FFA500 28%, transparent 30%,
-            transparent 33%, #FFD700 33%, #FF8C00 35%, transparent 37%,
-            transparent 40%, #FFA500 40%, #FFD700 42%, transparent 44%,
-            transparent 46%, rgba(255, 140, 0, 0.9) 46%, rgba(255, 215, 0, 1) 48%, transparent 50%,
-            transparent 52%, rgba(255, 165, 0, 0.7) 52%, transparent 54%,
-            transparent 56%, rgba(255, 140, 0, 0.6) 56%, transparent 58%
+            transparent 0%, transparent 8%,
+            #FFD700 8%, #FF8C00 9%, transparent 10%,
+            transparent 12%, #FFA500 12%, #FFD700 13%, transparent 14%,
+            transparent 16%, #FF8C00 16%, #FFA500 17%, transparent 18%,
+            transparent 20%, #FFD700 20%, #FF8C00 21%, transparent 22%,
+            transparent 24%, #FFA500 24%, #FFD700 25%, transparent 26%,
+            transparent 28%, #FF8C00 28%, #FFA500 29%, transparent 30%,
+            transparent 32%, #FFD700 32%, #FF8C00 33%, transparent 34%,
+            transparent 36%, #FFA500 36%, #FFD700 37%, transparent 38%,
+            transparent 40%, #FF8C00 40%, #FFA500 41%, transparent 42%,
+            transparent 44%, #FFD700 44%, #FF8C00 45%, transparent 46%,
+            transparent 47%, rgba(255, 140, 0, 0.95) 47%, rgba(255, 215, 0, 1) 48%, transparent 49%,
+            transparent 50%, rgba(255, 165, 0, 0.9) 50%, rgba(255, 140, 0, 0.8) 51%, transparent 52%,
+            transparent 53%, rgba(255, 215, 0, 0.7) 53%, transparent 54%,
+            transparent 55%, rgba(255, 140, 0, 0.6) 55%, transparent 56%,
+            transparent 57%, rgba(255, 165, 0, 0.5) 57%, transparent 58%,
+            transparent 59%, rgba(255, 215, 0, 0.4) 59%, transparent 60%
         ),
-        /* Layer 6: Center ornate pattern */
+        /* Layer 9: Additional decorative rings */
+        radial-gradient(circle,
+            transparent 0%, transparent 6%,
+            rgba(255, 215, 0, 0.8) 6%, rgba(255, 140, 0, 0.7) 7%, transparent 8%,
+            transparent 60%, rgba(255, 215, 0, 0.4) 60%, transparent 61%
+        ),
+        /* Layer 10: Fine outer ring */
+        radial-gradient(circle,
+            transparent 0%, transparent 4%,
+            rgba(255, 215, 0, 0.6) 4%, transparent 5%,
+            transparent 61%, rgba(255, 140, 0, 0.3) 61%, transparent 62%
+        ),
+        /* Layer 11: Center ornate pattern - more detailed */
         radial-gradient(circle at center,
-            #FFD700 0%, #FF8C00 8%, transparent 12%,
-            transparent 15%, #FFA500 15%, #FFD700 18%, transparent 20%
+            #FFD700 0%, #FF8C00 4%, transparent 6%,
+            transparent 8%, #FFA500 8%, #FFD700 10%, transparent 12%,
+            transparent 14%, #FF8C00 14%, #FFA500 15%, transparent 16%,
+            transparent 17%, #FFD700 17%, transparent 20%
+        ),
+        /* Layer 12: Center fine pattern */
+        radial-gradient(circle at center,
+            rgba(255, 215, 0, 0.9) 0%, rgba(255, 140, 0, 0.8) 3%, transparent 5%
         );
     animation: mandalaRotate 50s linear infinite;
     opacity: 0.75;
     box-shadow: 
-        0 0 80px rgba(255, 140, 0, 0.7),
-        0 0 120px rgba(255, 215, 0, 0.4),
-        inset 0 0 60px rgba(255, 215, 0, 0.3);
-    border: 3px solid rgba(255, 215, 0, 0.5);
+        0 0 100px rgba(255, 140, 0, 0.8),
+        0 0 150px rgba(255, 215, 0, 0.5),
+        inset 0 0 80px rgba(255, 215, 0, 0.4);
+    border: 4px solid rgba(255, 215, 0, 0.6);
 }
 
 @keyframes mandalaRotate {
@@ -269,7 +368,7 @@ body {
 
 .name-right {
     position: absolute;
-    right: 5%;
+    right: 2%;
     top: 50%;
     transform: translateY(-50%);
     z-index: 12;
@@ -307,10 +406,7 @@ body {
 }
 
 .ganesh-img-cover {
-    width: 100px;
-    height: auto;
-    filter: drop-shadow(0 5px 20px rgba(255, 215, 0, 0.6));
-    margin-bottom: var(--spacing-sm);
+    display: none;
 }
 
 .sanskrit-cover {
@@ -323,6 +419,24 @@ body {
         2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
+.sanskrit-above {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 12;
+    margin: 0;
+}
+
+.wedding-below {
+    position: absolute;
+    bottom: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 12;
+    margin: 0;
+}
+
 .wedding-text-new {
     font-size: 1.2rem;
     color: #FFD700;
@@ -332,7 +446,6 @@ body {
     text-shadow: 
         0 0 10px rgba(255, 215, 0, 0.8),
         1px 1px 3px rgba(0, 0, 0, 0.5);
-    margin-bottom: var(--spacing-lg);
 }
 
 @keyframes fadeInScale {
@@ -760,7 +873,17 @@ section:last-child {
     }
     
     .name-right {
-        right: 2%;
+        right: 1%;
+    }
+    
+    .sanskrit-above {
+        top: 20%;
+        font-size: 1.1rem;
+    }
+    
+    .wedding-below {
+        bottom: 20%;
+        font-size: 1rem;
     }
     
     .ganesh-img-cover {

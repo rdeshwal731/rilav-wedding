@@ -324,17 +324,20 @@ body {
 .petal-5::before { background: linear-gradient(135deg, #FF4500 0%, #FF6347 100%); }
 .petal-5::after { background: linear-gradient(135deg, #FF6347 0%, #FF8C69 100%); }
 
-/* Wind-driven falling animations - Invisible at start, visible while falling */
+/* Wind-driven falling animations - Start invisible above screen, fade in while falling */
 @keyframes cherryFallWind1 {
     0% {
-        top: -5%;
+        top: -15%;
         transform: translateX(0) rotate(0deg);
         opacity: 0;
+        visibility: hidden;
     }
-    10% {
+    12% {
         opacity: 0;
+        visibility: visible;
     }
-    15% {
+    18% {
+        top: 5%;
         opacity: 0.8;
     }
     50% {
@@ -345,26 +348,30 @@ body {
         transform: translateX(-50px) rotate(270deg);
         opacity: 0.85;
     }
-    90% {
-        opacity: 0.6;
+    92% {
+        opacity: 0.5;
     }
     100% {
-        top: 105%;
+        top: 110%;
         transform: translateX(30px) rotate(360deg);
         opacity: 0;
+        visibility: hidden;
     }
 }
 
 @keyframes cherryFallWind2 {
     0% {
-        top: -5%;
+        top: -15%;
         transform: translateX(0) rotate(0deg);
         opacity: 0;
+        visibility: hidden;
     }
-    10% {
+    12% {
         opacity: 0;
+        visibility: visible;
     }
-    15% {
+    18% {
+        top: 5%;
         opacity: 0.8;
     }
     40% {
@@ -375,26 +382,30 @@ body {
         transform: translateX(60px) rotate(300deg);
         opacity: 0.85;
     }
-    90% {
-        opacity: 0.6;
+    92% {
+        opacity: 0.5;
     }
     100% {
-        top: 105%;
+        top: 110%;
         transform: translateX(-40px) rotate(450deg);
         opacity: 0;
+        visibility: hidden;
     }
 }
 
 @keyframes cherryFallWind3 {
     0% {
-        top: -5%;
+        top: -15%;
         transform: translateX(0) rotate(0deg);
         opacity: 0;
+        visibility: hidden;
     }
-    10% {
+    12% {
         opacity: 0;
+        visibility: visible;
     }
-    15% {
+    18% {
+        top: 5%;
         opacity: 0.75;
     }
     30% {
@@ -409,13 +420,14 @@ body {
         transform: translateX(50px) rotate(340deg);
         opacity: 0.7;
     }
-    95% {
+    92% {
         opacity: 0.4;
     }
     100% {
-        top: 105%;
+        top: 110%;
         transform: translateX(10px) rotate(400deg);
         opacity: 0;
+        visibility: hidden;
     }
 }
 

@@ -8,16 +8,19 @@
    CSS VARIABLES & RESET
    ============================================ */
 :root {
-    /* Color Palette */
-    --cream-bg: #FAF9F6;
-    --dark-green: #2C5530;
-    --accent-pink: #D4A5A5;
-    --gold: #B8860B;
-    --botanical-green: #7C9473;
-    --light-green: #96B48A;
+    /* Color Palette - Enhanced Vibrant Version */
+    --cream-bg: #FFF8F0;
+    --dark-green: #1B5E20;
+    --accent-pink: #FF6B9D;
+    --gold: #FFD700;
+    --botanical-green: #4CAF50;
+    --light-green: #81C784;
     --white: #FFFFFF;
-    --text-dark: #333333;
-    --text-light: #666666;
+    --text-dark: #2C2C2C;
+    --text-light: #5D5D5D;
+    --rose-pink: #FF1744;
+    --peach: #FFB74D;
+    --lavender: #CE93D8;
     
     /* Fonts */
     --font-heading: 'Playfair Display', serif;
@@ -51,7 +54,7 @@ html {
 
 body {
     font-family: var(--font-body);
-    background: linear-gradient(135deg, #f5f3ef 0%, #e8e5df 100%);
+    background: linear-gradient(135deg, #FFF5E6 0%, #FFE4E1 50%, #F0E6FF 100%);
     color: var(--text-dark);
     overflow-x: hidden;
     min-height: 100vh;
@@ -77,14 +80,14 @@ body {
     left: 0;
     width: 100%;
     height: 100vh;
-    background: linear-gradient(to bottom, var(--cream-bg) 0%, #f0ede8 100%);
+    background: linear-gradient(135deg, #FFEFD5 0%, #FFE4E1 25%, #E1BEE7 50%, #B2DFDB 75%, #C8E6C9 100%);
     z-index: 1000;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     transition: var(--transition-smooth);
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
 }
 
 .card-front.opening {
@@ -116,11 +119,12 @@ body {
     width: 100%;
     height: 60px;
     background-image: 
-        radial-gradient(circle, var(--botanical-green) 2px, transparent 2px),
-        radial-gradient(circle, var(--light-green) 2px, transparent 2px);
-    background-size: 30px 30px;
-    background-position: 0 0, 15px 15px;
-    opacity: 0.3;
+        radial-gradient(circle, var(--accent-pink) 3px, transparent 3px),
+        radial-gradient(circle, var(--gold) 2px, transparent 2px),
+        radial-gradient(circle, var(--botanical-green) 2px, transparent 2px);
+    background-size: 40px 40px, 30px 30px, 20px 20px;
+    background-position: 0 0, 20px 20px, 10px 10px;
+    opacity: 0.4;
     margin: var(--spacing-sm) 0;
 }
 
@@ -241,20 +245,49 @@ body {
 
 .petal {
     position: absolute;
-    width: 10px;
-    height: 10px;
-    background: radial-gradient(ellipse at center, var(--accent-pink) 0%, transparent 70%);
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
-    opacity: 0.6;
+    opacity: 0.7;
     animation: fall linear infinite;
 }
 
-.petal-1 { left: 10%; animation-duration: 12s; animation-delay: 0s; }
-.petal-2 { left: 30%; animation-duration: 15s; animation-delay: 2s; }
-.petal-3 { left: 50%; animation-duration: 13s; animation-delay: 4s; }
-.petal-4 { left: 70%; animation-duration: 14s; animation-delay: 1s; }
-.petal-5 { left: 85%; animation-duration: 16s; animation-delay: 3s; }
-.petal-6 { left: 20%; animation-duration: 11s; animation-delay: 5s; }
+.petal-1 { 
+    left: 10%; 
+    animation-duration: 12s; 
+    animation-delay: 0s;
+    background: radial-gradient(ellipse at center, var(--accent-pink) 0%, transparent 70%);
+}
+.petal-2 { 
+    left: 30%; 
+    animation-duration: 15s; 
+    animation-delay: 2s;
+    background: radial-gradient(ellipse at center, var(--gold) 0%, transparent 70%);
+}
+.petal-3 { 
+    left: 50%; 
+    animation-duration: 13s; 
+    animation-delay: 4s;
+    background: radial-gradient(ellipse at center, var(--lavender) 0%, transparent 70%);
+}
+.petal-4 { 
+    left: 70%; 
+    animation-duration: 14s; 
+    animation-delay: 1s;
+    background: radial-gradient(ellipse at center, var(--peach) 0%, transparent 70%);
+}
+.petal-5 { 
+    left: 85%; 
+    animation-duration: 16s; 
+    animation-delay: 3s;
+    background: radial-gradient(ellipse at center, var(--rose-pink) 0%, transparent 70%);
+}
+.petal-6 { 
+    left: 20%; 
+    animation-duration: 11s; 
+    animation-delay: 5s;
+    background: radial-gradient(ellipse at center, var(--light-green) 0%, transparent 70%);
+}
 
 @keyframes fall {
     0% {
@@ -297,7 +330,7 @@ section.revealed {
    HERO SECTION
    ============================================ */
 .hero-section {
-    background: linear-gradient(135deg, var(--cream-bg) 0%, #f5f2ed 100%);
+    background: linear-gradient(135deg, #FFF0F5 0%, #FFE4E8 25%, #E8F5E9 50%, #FFF9C4 100%);
 }
 
 .couple-photo-bg {
@@ -413,7 +446,7 @@ section.revealed {
    BLESSING SECTION
    ============================================ */
 .blessing-section {
-    background: linear-gradient(to bottom, #f5f2ed 0%, var(--cream-bg) 100%);
+    background: linear-gradient(135deg, #E1F5FE 0%, #F3E5F5 50%, #FFF9C4 100%);
     flex-direction: column;
 }
 
@@ -428,11 +461,14 @@ section.revealed {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    border: 4px solid var(--gold);
+    border: 5px solid transparent;
+    background-clip: padding-box;
     box-shadow: 
-        0 10px 30px rgba(0, 0, 0, 0.1),
-        0 0 0 10px var(--cream-bg),
-        0 0 0 14px var(--botanical-green);
+        0 10px 30px rgba(255, 107, 157, 0.3),
+        0 0 0 10px #FFFFFF,
+        0 0 0 15px #FF6B9D,
+        0 0 0 20px #FFD700,
+        0 0 0 25px #4CAF50;
     position: relative;
     margin: 0 auto;
 }
@@ -518,12 +554,26 @@ section.revealed {
 }
 
 .date-venue-card {
-    background: white;
+    background: linear-gradient(135deg, #FFFFFF 0%, #FFF9C4 100%);
     border-radius: 20px;
     padding: var(--spacing-lg);
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 40px rgba(255, 107, 157, 0.2);
     margin-bottom: var(--spacing-lg);
-    border: 2px solid var(--botanical-green);
+    border: 3px solid transparent;
+    background-clip: padding-box;
+    position: relative;
+}
+
+.date-venue-card::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    background: linear-gradient(135deg, #FF6B9D, #FFD700, #4CAF50, #CE93D8);
+    border-radius: 20px;
+    z-index: -1;
 }
 
 .date-block {
@@ -602,12 +652,12 @@ section.revealed {
 }
 
 .venue-card {
-    background: linear-gradient(135deg, var(--botanical-green), var(--light-green));
+    background: linear-gradient(135deg, #FF6B9D 0%, #C2185B 50%, #7B1FA2 100%);
     color: white;
     padding: var(--spacing-lg);
     border-radius: 20px;
     text-align: center;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 30px rgba(123, 31, 162, 0.4);
 }
 
 .venue-heading {
@@ -636,7 +686,7 @@ section.revealed {
    FOOTER SECTION
    ============================================ */
 .footer-section {
-    background: linear-gradient(to top, #f5f2ed 0%, var(--cream-bg) 100%);
+    background: linear-gradient(135deg, #FFEBEE 0%, #F8BBD0 25%, #E1BEE7 50%, #D1C4E9 100%);
     position: relative;
 }
 
@@ -696,7 +746,7 @@ section.revealed {
 }
 
 .calendar-btn {
-    background: linear-gradient(135deg, var(--gold), #d4a017);
+    background: linear-gradient(135deg, #FF6B9D 0%, #FF1744 50%, #C2185B 100%);
     color: white;
     border: none;
     padding: 1rem 2.5rem;
@@ -705,7 +755,7 @@ section.revealed {
     font-weight: 600;
     border-radius: 50px;
     cursor: pointer;
-    box-shadow: 0 8px 20px rgba(184, 134, 11, 0.3);
+    box-shadow: 0 8px 20px rgba(255, 23, 68, 0.4);
     transition: var(--transition-fast);
     display: inline-flex;
     align-items: center;
@@ -717,7 +767,8 @@ section.revealed {
 
 .calendar-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 12px 30px rgba(184, 134, 11, 0.4);
+    box-shadow: 0 12px 30px rgba(255, 23, 68, 0.6);
+    background: linear-gradient(135deg, #FF1744 0%, #C2185B 50%, #AD1457 100%);
 }
 
 .calendar-btn:active {

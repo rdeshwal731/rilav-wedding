@@ -117,22 +117,12 @@
     }
     
     // ============================================
-    // PARALLAX EFFECT (SUBTLE)
+    // PARALLAX EFFECT (DISABLED - causes positioning issues)
     // ============================================
     function initParallax() {
-        if (window.innerWidth < 768) return; // Skip on mobile for performance
-        
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            
-            // Apply subtle parallax to background photos
-            const photoBackgrounds = document.querySelectorAll('.couple-photo-bg, .couple-photo-side, .couple-photo-footer');
-            photoBackgrounds.forEach(bg => {
-                const speed = 0.5;
-                const yPos = -(scrolled * speed);
-                bg.style.transform = `translateY(${yPos}px)`;
-            });
-        });
+        // Disabled to prevent background photo jumping during transitions
+        // Background photos now use fixed positioning for stability
+        return;
     }
     
     // ============================================

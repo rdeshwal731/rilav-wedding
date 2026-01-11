@@ -96,76 +96,63 @@ body {
     overflow: hidden;
 }
 
-/* Four Corner Mandalas - Traditional Ornate Style */
+/* Four Corner Mandalas - Glowing Particle/Dot Style */
 .mandala-corner {
     position: absolute;
     width: 150px;
     height: 150px;
     border-radius: 50%;
     background-image: 
-        /* Traditional ornate petal outlines - 16 large petals */
+        /* Radial spokes - glowing lines from center */
         repeating-conic-gradient(from 0deg,
-            transparent 0deg 10deg,
-            #FFD700 10deg 11deg,
-            transparent 11deg 12.5deg,
-            #FFA500 12.5deg 13.5deg,
-            transparent 13.5deg 15deg,
-            #FF8C00 15deg 16deg,
-            transparent 16deg 22.5deg
+            transparent 0deg 11.25deg,
+            rgba(255, 215, 0, 0.8) 11.25deg 11.5deg,
+            transparent 11.5deg 22.5deg
         ),
-        /* Second layer of petals - offset */
-        repeating-conic-gradient(from 5deg,
-            transparent 0deg 8deg,
-            rgba(255, 215, 0, 0.8) 8deg 9deg,
-            transparent 9deg 10.5deg,
-            rgba(255, 165, 0, 0.7) 10.5deg 11.5deg,
-            transparent 11.5deg 13deg,
-            rgba(255, 140, 0, 0.6) 13deg 14deg,
-            transparent 14deg 22.5deg
+        repeating-conic-gradient(from 5.625deg,
+            transparent 0deg 11.25deg,
+            rgba(255, 165, 0, 0.7) 11.25deg 11.5deg,
+            transparent 11.5deg 22.5deg
         ),
-        /* Fine decorative petals - 32 small */
-        repeating-conic-gradient(from 2.5deg,
-            transparent 0deg 4deg,
-            rgba(255, 215, 0, 0.6) 4deg 4.5deg,
-            transparent 4.5deg 5.625deg,
-            rgba(255, 140, 0, 0.5) 5.625deg 6.125deg,
-            transparent 6.125deg 11.25deg
-        ),
-        /* Intricate concentric circles with filigree effect */
+        /* Concentric rings made of glowing particles */
         radial-gradient(circle,
-            transparent 0%, transparent 5%,
-            rgba(255, 215, 0, 0.3) 5%, transparent 5.5%,
-            transparent 8%, rgba(255, 140, 0, 0.4) 8%, rgba(255, 215, 0, 0.5) 8.5%, transparent 9%,
-            transparent 12%, rgba(255, 165, 0, 0.3) 12%, transparent 12.5%,
-            transparent 15%, rgba(255, 215, 0, 0.4) 15%, rgba(255, 140, 0, 0.5) 15.5%, transparent 16%,
-            transparent 20%, rgba(255, 165, 0, 0.3) 20%, transparent 20.5%,
-            transparent 25%, rgba(255, 215, 0, 0.5) 25%, rgba(255, 140, 0, 0.6) 25.5%, transparent 26%,
-            transparent 30%, rgba(255, 165, 0, 0.4) 30%, transparent 30.5%,
-            transparent 35%, rgba(255, 215, 0, 0.6) 35%, rgba(255, 140, 0, 0.7) 35.5%, transparent 36%,
-            transparent 40%, rgba(255, 165, 0, 0.5) 40%, transparent 40.5%,
-            transparent 45%, rgba(255, 215, 0, 0.7) 45%, rgba(255, 140, 0, 0.8) 45.5%, transparent 46%,
-            transparent 48%, rgba(255, 165, 0, 0.6) 48%, transparent 48.5%
+            rgba(255, 215, 0, 0.9) 0%, rgba(255, 140, 0, 0.8) 1%, transparent 2%,
+            transparent 8%, rgba(255, 215, 0, 0.6) 8.5%, rgba(255, 165, 0, 0.5) 9%, transparent 9.5%,
+            transparent 12%, rgba(255, 140, 0, 0.5) 12.5%, rgba(255, 215, 0, 0.4) 13%, transparent 13.5%,
+            transparent 18%, rgba(255, 165, 0, 0.4) 18.5%, rgba(255, 140, 0, 0.3) 19%, transparent 19.5%,
+            transparent 25%, rgba(255, 215, 0, 0.5) 25.5%, rgba(255, 165, 0, 0.4) 26%, transparent 26.5%,
+            transparent 32%, rgba(255, 140, 0, 0.4) 32.5%, rgba(255, 215, 0, 0.3) 33%, transparent 33.5%,
+            transparent 40%, rgba(255, 165, 0, 0.3) 40.5%, rgba(255, 140, 0, 0.2) 41%, transparent 41.5%,
+            transparent 45%, rgba(255, 215, 0, 0.2) 45.5%, transparent 46%
         ),
-        /* Fine dot pattern for filigree */
+        /* Additional particle layers */
+        radial-gradient(circle,
+            transparent 0%, transparent 6%,
+            rgba(255, 215, 0, 0.3) 6.2%, transparent 6.5%,
+            transparent 14%, rgba(255, 140, 0, 0.3) 14.2%, transparent 14.5%,
+            transparent 22%, rgba(255, 165, 0, 0.3) 22.2%, transparent 22.5%,
+            transparent 30%, rgba(255, 215, 0, 0.2) 30.2%, transparent 30.5%,
+            transparent 38%, rgba(255, 140, 0, 0.2) 38.2%, transparent 38.5%
+        ),
+        /* Fine particle dots */
         repeating-conic-gradient(from 0deg,
-            transparent 0deg 1.5deg,
-            rgba(255, 215, 0, 0.4) 1.5deg 1.8deg,
-            transparent 1.8deg 3deg
-        ),
-        /* Center ornate pattern */
-        radial-gradient(circle at center,
-            transparent 0%, transparent 8%,
-            rgba(255, 215, 0, 0.6) 8%, rgba(255, 140, 0, 0.7) 9%, transparent 10%,
-            transparent 12%, rgba(255, 165, 0, 0.5) 12%, rgba(255, 215, 0, 0.6) 13%, transparent 14%,
-            transparent 15%, rgba(255, 140, 0, 0.8) 15%, rgba(255, 215, 0, 0.9) 16%, transparent 17%,
-            transparent 18%, rgba(255, 165, 0, 0.7) 18%, transparent 20%
+            transparent 0deg 2.25deg,
+            rgba(255, 215, 0, 0.4) 2.25deg 2.35deg,
+            transparent 2.35deg 4.5deg,
+            rgba(255, 140, 0, 0.3) 4.5deg 4.6deg,
+            transparent 4.6deg 6.75deg,
+            rgba(255, 165, 0, 0.3) 6.75deg 6.85deg,
+            transparent 6.85deg 9deg,
+            rgba(255, 215, 0, 0.2) 9deg 9.1deg,
+            transparent 9.1deg 11.25deg
         );
     animation: mandalaRotate 40s linear infinite;
-    opacity: 0.9;
+    opacity: 0.95;
+    filter: blur(0.5px);
     box-shadow: 
-        0 0 60px rgba(255, 140, 0, 0.8),
-        inset 0 0 50px rgba(255, 215, 0, 0.3);
-    border: 2px solid rgba(255, 215, 0, 0.4);
+        0 0 80px rgba(255, 140, 0, 0.9),
+        0 0 120px rgba(255, 215, 0, 0.7),
+        inset 0 0 60px rgba(255, 215, 0, 0.4);
 }
 
 .mandala-top-left {
@@ -192,113 +179,93 @@ body {
     animation-delay: -20s;
 }
 
-/* Large Central Mandala - Traditional Ornate Style */
+/* Large Central Mandala - Glowing Particle/Dot Style */
 .mandala-central {
     position: absolute;
     width: 500px;
     height: 500px;
     border-radius: 50%;
     background-image: 
-        /* Traditional ornate petal outlines - 24 large petals */
+        /* Radial spokes - glowing lines from center (32 spokes) */
         repeating-conic-gradient(from 0deg,
-            transparent 0deg 7.5deg,
-            #FFD700 7.5deg 8.5deg,
-            transparent 8.5deg 9.5deg,
-            #FFA500 9.5deg 10.5deg,
-            transparent 10.5deg 11.5deg,
-            #FF8C00 11.5deg 12.5deg,
-            transparent 12.5deg 15deg
+            transparent 0deg 5.625deg,
+            rgba(255, 215, 0, 0.9) 5.625deg 5.8deg,
+            transparent 5.8deg 11.25deg
         ),
-        /* Second layer of large petals - offset */
-        repeating-conic-gradient(from 3.75deg,
-            transparent 0deg 6deg,
-            rgba(255, 215, 0, 0.9) 6deg 7deg,
-            transparent 7deg 8deg,
-            rgba(255, 165, 0, 0.8) 8deg 9deg,
-            transparent 9deg 10deg,
-            rgba(255, 140, 0, 0.7) 10deg 11deg,
-            transparent 11deg 15deg
+        repeating-conic-gradient(from 2.8125deg,
+            transparent 0deg 5.625deg,
+            rgba(255, 165, 0, 0.8) 5.625deg 5.8deg,
+            transparent 5.8deg 11.25deg
         ),
-        /* Third layer - medium petals */
-        repeating-conic-gradient(from 1.875deg,
-            transparent 0deg 5deg,
-            rgba(255, 215, 0, 0.7) 5deg 5.5deg,
-            transparent 5.5deg 6.25deg,
-            rgba(255, 140, 0, 0.6) 6.25deg 6.75deg,
-            transparent 6.75deg 7.5deg
+        repeating-conic-gradient(from 1.40625deg,
+            transparent 0deg 5.625deg,
+            rgba(255, 140, 0, 0.7) 5.625deg 5.8deg,
+            transparent 5.8deg 11.25deg
         ),
-        /* Fine decorative petals - 48 small */
-        repeating-conic-gradient(from 0.9375deg,
-            transparent 0deg 3deg,
-            rgba(255, 215, 0, 0.5) 3deg 3.3deg,
-            transparent 3.3deg 3.75deg,
-            rgba(255, 140, 0, 0.4) 3.75deg 4.05deg,
-            transparent 4.05deg 7.5deg
+        /* Concentric rings made of glowing particles - many layers */
+        radial-gradient(circle,
+            rgba(255, 215, 0, 1) 0%, rgba(255, 140, 0, 0.95) 0.5%, rgba(255, 165, 0, 0.9) 1%, transparent 1.5%,
+            transparent 3%, rgba(255, 215, 0, 0.7) 3.3%, rgba(255, 165, 0, 0.6) 3.6%, transparent 4%,
+            transparent 6%, rgba(255, 140, 0, 0.6) 6.3%, rgba(255, 215, 0, 0.5) 6.6%, transparent 7%,
+            transparent 9%, rgba(255, 165, 0, 0.5) 9.3%, rgba(255, 140, 0, 0.4) 9.6%, transparent 10%,
+            transparent 12%, rgba(255, 215, 0, 0.6) 12.3%, rgba(255, 165, 0, 0.5) 12.6%, transparent 13%,
+            transparent 15%, rgba(255, 140, 0, 0.5) 15.3%, rgba(255, 215, 0, 0.4) 15.6%, transparent 16%,
+            transparent 18%, rgba(255, 165, 0, 0.4) 18.3%, rgba(255, 140, 0, 0.3) 18.6%, transparent 19%,
+            transparent 21%, rgba(255, 215, 0, 0.5) 21.3%, rgba(255, 165, 0, 0.4) 21.6%, transparent 22%,
+            transparent 24%, rgba(255, 140, 0, 0.4) 24.3%, rgba(255, 215, 0, 0.3) 24.6%, transparent 25%,
+            transparent 27%, rgba(255, 165, 0, 0.3) 27.3%, rgba(255, 140, 0, 0.2) 27.6%, transparent 28%,
+            transparent 30%, rgba(255, 215, 0, 0.4) 30.3%, rgba(255, 165, 0, 0.3) 30.6%, transparent 31%,
+            transparent 33%, rgba(255, 140, 0, 0.3) 33.3%, rgba(255, 215, 0, 0.2) 33.6%, transparent 34%,
+            transparent 36%, rgba(255, 165, 0, 0.2) 36.3%, rgba(255, 140, 0, 0.15) 36.6%, transparent 37%,
+            transparent 39%, rgba(255, 215, 0, 0.2) 39.3%, rgba(255, 165, 0, 0.15) 39.6%, transparent 40%,
+            transparent 42%, rgba(255, 140, 0, 0.15) 42.3%, rgba(255, 215, 0, 0.1) 42.6%, transparent 43%,
+            transparent 45%, rgba(255, 165, 0, 0.1) 45.3%, transparent 45.6%
         ),
-        /* Ultra-fine decorative elements - 96 tiny */
-        repeating-conic-gradient(from 0.46875deg,
-            transparent 0deg 1.5deg,
-            rgba(255, 215, 0, 0.3) 1.5deg 1.65deg,
-            transparent 1.65deg 3.75deg
-        ),
-        /* Intricate concentric circles with filigree effect - many layers */
+        /* Additional particle layers for density */
         radial-gradient(circle,
             transparent 0%, transparent 4%,
-            rgba(255, 215, 0, 0.2) 4%, transparent 4.3%,
-            transparent 6%, rgba(255, 140, 0, 0.3) 6%, rgba(255, 215, 0, 0.4) 6.3%, transparent 6.6%,
-            transparent 8%, rgba(255, 165, 0, 0.2) 8%, transparent 8.3%,
-            transparent 10%, rgba(255, 215, 0, 0.3) 10%, rgba(255, 140, 0, 0.4) 10.3%, transparent 10.6%,
-            transparent 12%, rgba(255, 165, 0, 0.3) 12%, transparent 12.3%,
-            transparent 14%, rgba(255, 215, 0, 0.4) 14%, rgba(255, 140, 0, 0.5) 14.3%, transparent 14.6%,
-            transparent 16%, rgba(255, 165, 0, 0.3) 16%, transparent 16.3%,
-            transparent 18%, rgba(255, 215, 0, 0.5) 18%, rgba(255, 140, 0, 0.6) 18.3%, transparent 18.6%,
-            transparent 20%, rgba(255, 165, 0, 0.4) 20%, transparent 20.3%,
-            transparent 22%, rgba(255, 215, 0, 0.6) 22%, rgba(255, 140, 0, 0.7) 22.3%, transparent 22.6%,
-            transparent 24%, rgba(255, 165, 0, 0.5) 24%, transparent 24.3%,
-            transparent 26%, rgba(255, 215, 0, 0.7) 26%, rgba(255, 140, 0, 0.8) 26.3%, transparent 26.6%,
-            transparent 28%, rgba(255, 165, 0, 0.6) 28%, transparent 28.3%,
-            transparent 30%, rgba(255, 215, 0, 0.8) 30%, rgba(255, 140, 0, 0.9) 30.3%, transparent 30.6%,
-            transparent 32%, rgba(255, 165, 0, 0.7) 32%, transparent 32.3%,
-            transparent 34%, rgba(255, 215, 0, 0.9) 34%, rgba(255, 140, 0, 1) 34.3%, transparent 34.6%,
-            transparent 36%, rgba(255, 165, 0, 0.8) 36%, transparent 36.3%,
-            transparent 38%, rgba(255, 215, 0, 1) 38%, rgba(255, 140, 0, 0.95) 38.3%, transparent 38.6%,
-            transparent 40%, rgba(255, 165, 0, 0.9) 40%, transparent 40.3%,
-            transparent 42%, rgba(255, 215, 0, 0.95) 42%, rgba(255, 140, 0, 0.9) 42.3%, transparent 42.6%,
-            transparent 44%, rgba(255, 165, 0, 0.8) 44%, transparent 44.3%,
-            transparent 46%, rgba(255, 215, 0, 0.9) 46%, rgba(255, 140, 0, 0.85) 46.3%, transparent 46.6%,
-            transparent 48%, rgba(255, 165, 0, 0.7) 48%, transparent 48.3%
+            rgba(255, 215, 0, 0.4) 4.2%, transparent 4.5%,
+            transparent 8%, rgba(255, 140, 0, 0.4) 8.2%, transparent 8.5%,
+            transparent 12%, rgba(255, 165, 0, 0.4) 12.2%, transparent 12.5%,
+            transparent 16%, rgba(255, 215, 0, 0.3) 16.2%, transparent 16.5%,
+            transparent 20%, rgba(255, 140, 0, 0.3) 20.2%, transparent 20.5%,
+            transparent 24%, rgba(255, 165, 0, 0.3) 24.2%, transparent 24.5%,
+            transparent 28%, rgba(255, 215, 0, 0.2) 28.2%, transparent 28.5%,
+            transparent 32%, rgba(255, 140, 0, 0.2) 32.2%, transparent 32.5%,
+            transparent 36%, rgba(255, 165, 0, 0.2) 36.2%, transparent 36.5%,
+            transparent 40%, rgba(255, 215, 0, 0.15) 40.2%, transparent 40.5%,
+            transparent 44%, rgba(255, 140, 0, 0.1) 44.2%, transparent 44.5%
         ),
-        /* Additional fine filigree rings */
-        radial-gradient(circle,
-            transparent 0%, transparent 3%,
-            rgba(255, 215, 0, 0.3) 3%, rgba(255, 140, 0, 0.4) 3.2%, transparent 3.5%,
-            transparent 48%, rgba(255, 215, 0, 0.2) 48%, transparent 48.5%
-        ),
-        /* Fine dot pattern for filigree effect */
+        /* Fine particle dots throughout */
         repeating-conic-gradient(from 0deg,
-            transparent 0deg 1deg,
-            rgba(255, 215, 0, 0.3) 1deg 1.2deg,
-            transparent 1.2deg 2deg,
-            rgba(255, 140, 0, 0.25) 2deg 2.2deg,
-            transparent 2.2deg 3.75deg
+            transparent 0deg 1.125deg,
+            rgba(255, 215, 0, 0.5) 1.125deg 1.2deg,
+            transparent 1.2deg 2.25deg,
+            rgba(255, 140, 0, 0.4) 2.25deg 2.35deg,
+            transparent 2.35deg 3.375deg,
+            rgba(255, 165, 0, 0.4) 3.375deg 3.5deg,
+            transparent 3.5deg 4.5deg,
+            rgba(255, 215, 0, 0.3) 4.5deg 4.6deg,
+            transparent 4.6deg 5.625deg
         ),
-        /* Center ornate pattern - highly detailed */
-        radial-gradient(circle at center,
-            transparent 0%, transparent 6%,
-            rgba(255, 215, 0, 0.5) 6%, rgba(255, 140, 0, 0.6) 7%, transparent 8%,
-            transparent 10%, rgba(255, 165, 0, 0.4) 10%, rgba(255, 215, 0, 0.5) 11%, transparent 12%,
-            transparent 14%, rgba(255, 140, 0, 0.7) 14%, rgba(255, 215, 0, 0.8) 15%, transparent 16%,
-            transparent 18%, rgba(255, 165, 0, 0.6) 18%, rgba(255, 140, 0, 0.7) 19%, transparent 20%,
-            transparent 22%, rgba(255, 215, 0, 0.9) 22%, rgba(255, 140, 0, 1) 23%, transparent 24%,
-            transparent 25%, rgba(255, 165, 0, 0.8) 25%, transparent 27%
+        /* Ultra-fine particle layer */
+        repeating-conic-gradient(from 0.5625deg,
+            transparent 0deg 0.5625deg,
+            rgba(255, 215, 0, 0.2) 0.5625deg 0.65deg,
+            transparent 0.65deg 1.125deg,
+            rgba(255, 140, 0, 0.15) 1.125deg 1.2deg,
+            transparent 1.2deg 1.6875deg,
+            rgba(255, 165, 0, 0.15) 1.6875deg 1.75deg,
+            transparent 1.75deg 2.25deg
         );
     animation: mandalaRotate 50s linear infinite;
-    opacity: 0.85;
+    opacity: 0.9;
+    filter: blur(0.8px);
     box-shadow: 
-        0 0 120px rgba(255, 140, 0, 0.9),
-        0 0 180px rgba(255, 215, 0, 0.6),
-        inset 0 0 100px rgba(255, 215, 0, 0.3);
-    border: 3px solid rgba(255, 215, 0, 0.5);
+        0 0 150px rgba(255, 140, 0, 1),
+        0 0 220px rgba(255, 215, 0, 0.8),
+        0 0 300px rgba(255, 165, 0, 0.6),
+        inset 0 0 120px rgba(255, 215, 0, 0.5);
 }
 
 @keyframes mandalaRotate {

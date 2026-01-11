@@ -1,0 +1,828 @@
+/* ============================================
+   WEDDING INVITATION - RIYA & LAVESH
+   Mobile-first responsive design
+   Color theme from physical invitation
+   ============================================ */
+
+/* ============================================
+   CSS VARIABLES & RESET
+   ============================================ */
+:root {
+    /* Color Palette */
+    --cream-bg: #FAF9F6;
+    --dark-green: #2C5530;
+    --accent-pink: #D4A5A5;
+    --gold: #B8860B;
+    --botanical-green: #7C9473;
+    --light-green: #96B48A;
+    --white: #FFFFFF;
+    --text-dark: #333333;
+    --text-light: #666666;
+    
+    /* Fonts */
+    --font-heading: 'Playfair Display', serif;
+    --font-sanskrit: 'Noto Sans Devanagari', serif;
+    --font-body: 'Montserrat', sans-serif;
+    
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 3rem;
+    --spacing-xl: 4rem;
+    
+    /* Transitions */
+    --transition-smooth: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: var(--font-body);
+    background: linear-gradient(135deg, #f5f3ef 0%, #e8e5df 100%);
+    color: var(--text-dark);
+    overflow-x: hidden;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* ============================================
+   CARD CONTAINER
+   ============================================ */
+.card-container {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    perspective: 2000px;
+}
+
+/* ============================================
+   CARD FRONT (CLOSED STATE)
+   ============================================ */
+.card-front {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to bottom, var(--cream-bg) 0%, #f0ede8 100%);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.card-front.opening {
+    transform: rotateY(-90deg);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.card-cover-content {
+    text-align: center;
+    padding: var(--spacing-md);
+    max-width: 500px;
+    position: relative;
+    animation: fadeInScale 1s ease-out;
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.floral-decoration {
+    width: 100%;
+    height: 60px;
+    background-image: 
+        radial-gradient(circle, var(--botanical-green) 2px, transparent 2px),
+        radial-gradient(circle, var(--light-green) 2px, transparent 2px);
+    background-size: 30px 30px;
+    background-position: 0 0, 15px 15px;
+    opacity: 0.3;
+    margin: var(--spacing-sm) 0;
+}
+
+.ganesh-symbol {
+    margin: var(--spacing-md) 0;
+}
+
+.ganesh-img {
+    width: 80px;
+    height: auto;
+    margin-bottom: var(--spacing-xs);
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.sanskrit-invocation {
+    font-family: var(--font-sanskrit);
+    font-size: 1.2rem;
+    color: var(--dark-green);
+    font-weight: 500;
+    margin-top: var(--spacing-xs);
+}
+
+.couple-names-cover {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    color: var(--dark-green);
+    margin: var(--spacing-md) 0;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.ampersand {
+    font-style: italic;
+    color: var(--gold);
+    margin: 0 0.5rem;
+    font-size: 2.5rem;
+}
+
+.wedding-text {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: var(--spacing-lg);
+}
+
+.tap-instruction {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-lg);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.7;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+}
+
+.tap-instruction p {
+    font-size: 1rem;
+    color: var(--gold);
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.tap-icon {
+    font-size: 1.5rem;
+}
+
+/* ============================================
+   CARD INSIDE (OPENED STATE)
+   ============================================ */
+.card-inside {
+    display: none;
+    opacity: 0;
+    width: 100%;
+    background: var(--cream-bg);
+}
+
+.card-inside.visible {
+    display: block;
+    animation: fadeInContent 1s ease-out forwards;
+    animation-delay: 0.6s;
+}
+
+@keyframes fadeInContent {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================
+   FLOATING PETALS
+   ============================================ */
+.petals-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.petal {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: radial-gradient(ellipse at center, var(--accent-pink) 0%, transparent 70%);
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: fall linear infinite;
+}
+
+.petal-1 { left: 10%; animation-duration: 12s; animation-delay: 0s; }
+.petal-2 { left: 30%; animation-duration: 15s; animation-delay: 2s; }
+.petal-3 { left: 50%; animation-duration: 13s; animation-delay: 4s; }
+.petal-4 { left: 70%; animation-duration: 14s; animation-delay: 1s; }
+.petal-5 { left: 85%; animation-duration: 16s; animation-delay: 3s; }
+.petal-6 { left: 20%; animation-duration: 11s; animation-delay: 5s; }
+
+@keyframes fall {
+    0% {
+        top: -10%;
+        transform: translateX(0) rotate(0deg);
+    }
+    100% {
+        top: 110%;
+        transform: translateX(100px) rotate(360deg);
+    }
+}
+
+/* ============================================
+   SECTION BASE STYLES
+   ============================================ */
+section {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: var(--spacing-lg) var(--spacing-md);
+    overflow: hidden;
+}
+
+/* Scroll reveal animation */
+section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: var(--transition-smooth);
+}
+
+section.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+.hero-section {
+    background: linear-gradient(135deg, var(--cream-bg) 0%, #f5f2ed 100%);
+}
+
+.couple-photo-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.08;
+    filter: blur(2px);
+    z-index: 0;
+}
+
+.hero-content {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+}
+
+.ganesh-top {
+    margin-bottom: var(--spacing-md);
+}
+
+.ganesh-img-main {
+    width: 100px;
+    height: auto;
+    margin-bottom: var(--spacing-sm);
+    filter: drop-shadow(2px 2px 8px rgba(0, 0, 0, 0.1));
+}
+
+.sanskrit-main {
+    font-family: var(--font-sanskrit);
+    font-size: 1.5rem;
+    color: var(--dark-green);
+    font-weight: 600;
+}
+
+.floral-border-top,
+.floral-border-bottom {
+    width: 200px;
+    height: 2px;
+    background: linear-gradient(to right, transparent, var(--gold), transparent);
+    margin: var(--spacing-md) auto;
+    position: relative;
+}
+
+.floral-border-top::after,
+.floral-border-bottom::after {
+    content: '✿';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--gold);
+    background: var(--cream-bg);
+    padding: 0 10px;
+    font-size: 1.2rem;
+}
+
+.couple-names-main {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    color: var(--dark-green);
+    margin: var(--spacing-lg) 0;
+    line-height: 1.3;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.bride-name,
+.groom-name {
+    display: block;
+    font-weight: 600;
+}
+
+.ampersand-fancy {
+    font-style: italic;
+    color: var(--gold);
+    font-size: clamp(2rem, 6vw, 3rem);
+    margin: var(--spacing-sm) 0;
+}
+
+.wedding-announcement {
+    font-size: 1.3rem;
+    color: var(--text-light);
+    font-weight: 300;
+    letter-spacing: 3px;
+    text-transform: lowercase;
+    font-style: italic;
+}
+
+/* ============================================
+   BLESSING SECTION
+   ============================================ */
+.blessing-section {
+    background: linear-gradient(to bottom, #f5f2ed 0%, var(--cream-bg) 100%);
+    flex-direction: column;
+}
+
+.couple-photo-frame {
+    margin-bottom: var(--spacing-lg);
+}
+
+.photo-circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    border: 4px solid var(--gold);
+    box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.1),
+        0 0 0 10px var(--cream-bg),
+        0 0 0 14px var(--botanical-green);
+    position: relative;
+    margin: 0 auto;
+}
+
+.blessing-content {
+    text-align: center;
+    max-width: 700px;
+    padding: var(--spacing-md);
+}
+
+.sanskrit-shlok {
+    font-family: var(--font-sanskrit);
+    font-size: 1.3rem;
+    color: var(--dark-green);
+    line-height: 2;
+    margin-bottom: var(--spacing-lg);
+    font-weight: 500;
+}
+
+.shlok-line {
+    margin: var(--spacing-sm) 0;
+}
+
+.blessing-translation {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    font-style: italic;
+    line-height: 1.8;
+    padding: var(--spacing-md);
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    border-left: 3px solid var(--gold);
+}
+
+/* ============================================
+   DETAILS SECTION
+   ============================================ */
+.details-section {
+    background: var(--cream-bg);
+    position: relative;
+}
+
+.couple-photo-side {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.06;
+    clip-path: polygon(30% 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.details-content {
+    max-width: 600px;
+    position: relative;
+    z-index: 2;
+}
+
+.section-heading {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    color: var(--dark-green);
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    font-weight: 600;
+}
+
+.date-venue-card {
+    background: white;
+    border-radius: 20px;
+    padding: var(--spacing-lg);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    margin-bottom: var(--spacing-lg);
+    border: 2px solid var(--botanical-green);
+}
+
+.date-block {
+    text-align: center;
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 2px solid var(--cream-bg);
+}
+
+.day-name {
+    font-size: 1.3rem;
+    color: var(--dark-green);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.date-number {
+    font-size: 4rem;
+    font-family: var(--font-heading);
+    color: var(--gold);
+    font-weight: 700;
+    line-height: 1;
+    margin: var(--spacing-xs) 0;
+}
+
+.month-year {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.events-block {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.event-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-sm);
+    background: var(--cream-bg);
+    border-radius: 12px;
+    transition: var(--transition-fast);
+}
+
+.event-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.event-icon {
+    font-size: 2rem;
+    width: 50px;
+    text-align: center;
+}
+
+.event-details {
+    flex: 1;
+}
+
+.event-name {
+    font-size: 1.1rem;
+    color: var(--dark-green);
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.event-time {
+    font-size: 1rem;
+    color: var(--gold);
+    font-weight: 500;
+}
+
+.venue-card {
+    background: linear-gradient(135deg, var(--botanical-green), var(--light-green));
+    color: white;
+    padding: var(--spacing-lg);
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.venue-heading {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-sm);
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.venue-name {
+    font-size: 1.8rem;
+    font-family: var(--font-heading);
+    margin-bottom: var(--spacing-sm);
+    font-weight: 700;
+}
+
+.venue-address {
+    font-size: 1rem;
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+/* ============================================
+   FOOTER SECTION
+   ============================================ */
+.footer-section {
+    background: linear-gradient(to top, #f5f2ed 0%, var(--cream-bg) 100%);
+    position: relative;
+}
+
+.couple-photo-footer {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.05;
+    filter: blur(3px);
+}
+
+.footer-content {
+    max-width: 600px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.blessing-message {
+    margin-bottom: var(--spacing-lg);
+}
+
+.heart-decoration {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-md);
+    animation: heartbeat 2s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.blessing-text {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--dark-green);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-sm);
+}
+
+.blessing-text-sub {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    font-style: italic;
+    margin-bottom: var(--spacing-lg);
+}
+
+.calendar-btn {
+    background: linear-gradient(135deg, var(--gold), #d4a017);
+    color: white;
+    border: none;
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    font-family: var(--font-body);
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(184, 134, 11, 0.3);
+    transition: var(--transition-fast);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: var(--spacing-lg);
+}
+
+.calendar-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(184, 134, 11, 0.4);
+}
+
+.calendar-btn:active {
+    transform: translateY(0);
+}
+
+.calendar-icon {
+    font-size: 1.5rem;
+}
+
+.footer-quote {
+    margin-top: var(--spacing-xl);
+    padding-top: var(--spacing-lg);
+    border-top: 2px solid var(--botanical-green);
+}
+
+.footer-quote p {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    color: var(--text-light);
+    font-style: italic;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - TABLET
+   ============================================ */
+@media (min-width: 768px) {
+    .couple-names-main {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .ampersand-fancy {
+        margin: 0 var(--spacing-md);
+    }
+    
+    .photo-circle {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .date-venue-card {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-lg);
+    }
+    
+    .date-block {
+        flex: 0 0 auto;
+        border-bottom: none;
+        border-right: 2px solid var(--cream-bg);
+        padding-right: var(--spacing-lg);
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+    
+    .events-block {
+        flex: 1;
+    }
+    
+    .couple-photo-side {
+        width: 50%;
+    }
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - DESKTOP
+   ============================================ */
+@media (min-width: 1024px) {
+    section {
+        padding: var(--spacing-xl) var(--spacing-lg);
+    }
+    
+    .card-cover-content {
+        max-width: 600px;
+    }
+    
+    .ganesh-img {
+        width: 100px;
+    }
+    
+    .couple-names-cover {
+        font-size: 4rem;
+    }
+    
+    .photo-circle {
+        width: 300px;
+        height: 300px;
+    }
+    
+    .sanskrit-shlok {
+        font-size: 1.5rem;
+    }
+    
+    .details-content {
+        max-width: 800px;
+    }
+    
+    .footer-content {
+        max-width: 700px;
+    }
+}
+
+/* ============================================
+   ACCESSIBILITY & PRINT
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+@media print {
+    .card-front,
+    .petals-container,
+    .calendar-btn {
+        display: none;
+    }
+    
+    .card-inside {
+        display: block !important;
+        opacity: 1 !important;
+    }
+    
+    section {
+        page-break-inside: avoid;
+        min-height: auto;
+    }
+}
+
+/* ============================================
+   LOADING STATE
+   ============================================ */
+body.loading {
+    overflow: hidden;
+}
+
+body.loading .card-front {
+    opacity: 1;
+}

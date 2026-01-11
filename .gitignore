@@ -1,0 +1,39 @@
+# Operating System Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary Files
+*.tmp
+*.temp
+*.log
+
+# Build Files (not needed for this project)
+dist/
+build/
+.cache/
+
+# Dependencies (not used in this project, but good to have)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Environment Files
+.env
+.env.local
+
+# Backup Files
+*.backup
+*.bak
+*-backup.*
+
+# Personal Notes
+notes.txt
+TODO.txt

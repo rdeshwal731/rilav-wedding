@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Join us in celebrating the wedding of Riya and Lavesh">
+    <meta name="theme-color" content="#FAF9F6">
+    
+    <!-- Open Graph Meta Tags for Social Sharing -->
+    <meta property="og:title" content="Riya & Lavesh - Wedding Invitation">
+    <meta property="og:description" content="You are cordially invited to celebrate our special day">
+    <meta property="og:type" content="website">
+    
+    <title>Riya & Lavesh - Wedding Invitation</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Noto+Sans+Devanagari:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Google Analytics 4 -->
+    <!-- Replace G-XXXXXXXXXX with your actual Google Analytics Measurement ID -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX', {
+            'send_page_view': true,
+            'anonymize_ip': true  // Privacy: anonymize IP addresses
+        });
+        
+        // Custom event tracking for invitation interactions
+        function trackInvitationEvent(eventName, eventParams) {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', eventName, eventParams);
+            }
+        }
+        
+        // Make tracking function available globally
+        window.trackInvitationEvent = trackInvitationEvent;
+    </script>
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Card Container -->
+    <div id="invitation-card" class="card-container">
+        <!-- Card Front (Closed State) -->
+        <div id="card-front" class="card-front">
+            <div class="card-cover-content">
+                <div class="floral-decoration top"></div>
+                <div class="ganesh-symbol">
+                    <img src="images/ganesh.png" alt="Shri Ganesh" class="ganesh-img">
+                    <p class="sanskrit-invocation">॥ श्री गणेशाय नमः ॥</p>
+                </div>
+                <div class="cover-text">
+                    <h1 class="couple-names-cover">Riya <span class="ampersand">&</span> Lavesh</h1>
+                    <p class="wedding-text">Wedding Invitation</p>
+                </div>
+                <div class="tap-instruction">
+                    <span class="tap-icon">✨</span>
+                    <p>Tap to Open</p>
+                    <span class="tap-icon">✨</span>
+                </div>
+                <div class="floral-decoration bottom"></div>
+            </div>
+        </div>
+        
+        <!-- Card Inside (Opened State) -->
+        <div id="card-inside" class="card-inside">
+            <!-- Floating Petals Background -->
+            <div class="petals-container" aria-hidden="true">
+                <div class="petal petal-1"></div>
+                <div class="petal petal-2"></div>
+                <div class="petal petal-3"></div>
+                <div class="petal petal-4"></div>
+                <div class="petal petal-5"></div>
+                <div class="petal petal-6"></div>
+            </div>
+            
+            <!-- Section 1: Cover/Hero Section -->
+            <section class="hero-section" id="hero">
+                <div class="couple-photo-bg" style="background-image: url('images/couple-1.png')"></div>
+                <div class="hero-content">
+                    <div class="ganesh-top">
+                        <img src="images/ganesh.png" alt="Shri Ganesh" class="ganesh-img-main">
+                        <p class="sanskrit-main">॥ श्री गणेशाय नमः ॥</p>
+                    </div>
+                    <div class="floral-border-top"></div>
+                    <h1 class="couple-names-main">
+                        <span class="bride-name">Riya</span>
+                        <span class="ampersand-fancy">&</span>
+                        <span class="groom-name">Lavesh</span>
+                    </h1>
+                    <p class="wedding-announcement">are getting married</p>
+                    <div class="floral-border-bottom"></div>
+                </div>
+            </section>
+            
+            <!-- Section 2: Sanskrit Blessing Section -->
+            <section class="blessing-section" id="blessing">
+                <div class="couple-photo-frame">
+                    <div class="photo-circle" style="background-image: url('images/couple-2.png')"></div>
+                </div>
+                <div class="blessing-content">
+                    <div class="sanskrit-shlok">
+                        <p class="shlok-line">धन्यवाद महालक्ष्मी पूर्णतिष्ठ त्यागराज।</p>
+                        <p class="shlok-line">विवाहित मङ्गलकेषु सर्वक्षेम संतानयेत् परम॥</p>
+                    </div>
+                    <div class="blessing-translation">
+                        <p>May the divine bless this sacred union with love, prosperity, and eternal happiness</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Section 3: Event Details Section -->
+            <section class="details-section" id="details">
+                <div class="couple-photo-side" style="background-image: url('images/couple-3.png')"></div>
+                <div class="details-content">
+                    <h2 class="section-heading">Golden Moments</h2>
+                    <div class="date-venue-card">
+                        <div class="date-block">
+                            <p class="day-name">Friday</p>
+                            <p class="date-number">13</p>
+                            <p class="month-year">February 2026</p>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="events-block">
+                            <div class="event-item">
+                                <span class="event-icon">🌅</span>
+                                <div class="event-details">
+                                    <p class="event-name">Reception of Barat</p>
+                                    <p class="event-time">11:00 am</p>
+                                </div>
+                            </div>
+                            <div class="event-item">
+                                <span class="event-icon">🍽️</span>
+                                <div class="event-details">
+                                    <p class="event-name">Lunch</p>
+                                    <p class="event-time">1:00 pm</p>
+                                </div>
+                            </div>
+                            <div class="event-item">
+                                <span class="event-icon">💐</span>
+                                <div class="event-details">
+                                    <p class="event-name">Vidai</p>
+                                    <p class="event-time">5:00 pm</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="venue-card">
+                        <h3 class="venue-heading">Venue</h3>
+                        <p class="venue-name">Grand Dream Resort</p>
+                        <p class="venue-address">NH 58, Near Kanker Khera Bypass, Meerut</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Section 4: Blessing & Calendar Section -->
+            <section class="footer-section" id="footer">
+                <div class="couple-photo-footer" style="background-image: url('images/couple-4.png')"></div>
+                <div class="footer-content">
+                    <div class="blessing-message">
+                        <div class="heart-decoration">❤️</div>
+                        <p class="blessing-text">We seek your gracious presence and blessings</p>
+                        <p class="blessing-text-sub">as we embark on this beautiful journey together</p>
+                    </div>
+                    
+                    <button id="add-to-calendar-btn" class="calendar-btn">
+                        <span class="calendar-icon">📅</span>
+                        Add to Calendar
+                    </button>
+                    
+                    <div class="footer-quote">
+                        <p>"Two souls, one heart, endless love"</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    
+    <!-- Audio Element for Background Music -->
+    <audio id="background-music" loop>
+        <!-- Using royalty-free romantic instrumental from free music archive -->
+        <source src="https://cdn.pixabay.com/audio/2022/03/10/audio_4421f2bd84.mp3" type="audio/mpeg">
+        <!-- Fallback to local file if you add one -->
+        <source src="audio/background.mp3" type="audio/mpeg">
+    </audio>
+    
+    <script src="script.js"></script>
+</body>
+</html>

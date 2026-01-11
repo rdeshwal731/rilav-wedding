@@ -50,15 +50,20 @@ html {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
+    height: 100%;
 }
 
 body {
     font-family: var(--font-body);
-    background: linear-gradient(135deg, #FFF5E6 0%, #FFE4E1 50%, #F0E6FF 100%);
+    background: linear-gradient(135deg, #FFEBEE 0%, #F8BBD0 25%, #E1BEE7 50%, #D1C4E9 100%);
     color: var(--text-dark);
     overflow-x: hidden;
     min-height: 100vh;
     position: relative;
+    margin: 0;
+    padding: 0;
 }
 
 /* ============================================
@@ -69,6 +74,8 @@ body {
     min-height: 100vh;
     position: relative;
     perspective: 2000px;
+    margin: 0;
+    padding: 0;
 }
 
 /* ============================================
@@ -210,12 +217,15 @@ body {
     opacity: 0;
     width: 100%;
     background: var(--cream-bg);
+    margin: 0;
+    padding: 0;
 }
 
 .card-inside.visible {
     display: block;
     animation: fadeInContent 1s ease-out forwards;
     animation-delay: 0.6s;
+    min-height: 100vh;
 }
 
 @keyframes fadeInContent {
@@ -897,6 +907,8 @@ section.revealed {
 .footer-section {
     background: linear-gradient(135deg, #FFEBEE 0%, #F8BBD0 25%, #E1BEE7 50%, #D1C4E9 100%);
     position: relative;
+    margin: 0;
+    padding-bottom: var(--spacing-lg);
 }
 
 .couple-photo-footer {

@@ -53,6 +53,9 @@ html {
     margin: 0;
     padding: 0;
     height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
 }
 
 body {
@@ -60,10 +63,12 @@ body {
     background: linear-gradient(135deg, #FFEBEE 0%, #F8BBD0 25%, #E1BEE7 50%, #D1C4E9 100%);
     color: var(--text-dark);
     overflow-x: hidden;
+    overflow-y: auto;
     min-height: 100vh;
     position: relative;
     margin: 0;
     padding: 0;
+    -webkit-overflow-scrolling: touch;
 }
 
 /* ============================================
@@ -101,6 +106,7 @@ body {
     transform: rotateY(-90deg);
     opacity: 0;
     pointer-events: none;
+    visibility: hidden;
 }
 
 .card-cover-content {
@@ -220,6 +226,8 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 .card-inside.visible {
@@ -227,6 +235,8 @@ body {
     animation: fadeInContent 1s ease-out forwards;
     animation-delay: 0.6s;
     min-height: 100vh;
+    position: relative;
+    z-index: 1;
 }
 
 @keyframes fadeInContent {
@@ -469,6 +479,32 @@ section:last-child {
     padding-bottom: var(--spacing-lg);
 }
 
+/* Fix mobile scrolling issues */
+@media (max-width: 768px) {
+    section {
+        min-height: auto;
+        padding: var(--spacing-xl) var(--spacing-md);
+    }
+    
+    .hero-section {
+        min-height: 100vh;
+    }
+    
+    .blessing-section {
+        min-height: auto;
+        padding: var(--spacing-xl) var(--spacing-md);
+    }
+    
+    .details-section {
+        min-height: auto;
+    }
+    
+    .footer-section {
+        min-height: auto;
+        padding: var(--spacing-xl) var(--spacing-md);
+    }
+}
+
 /* Scroll reveal animation */
 section {
     opacity: 0;
@@ -604,6 +640,39 @@ section.revealed {
 .blessing-section {
     background: linear-gradient(135deg, #E1F5FE 0%, #F3E5F5 50%, #FFF9C4 100%);
     flex-direction: column;
+    position: relative;
+}
+
+.bride-portrait {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 200px;
+    height: 280px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    box-shadow: 
+        0 15px 40px rgba(255, 140, 0, 0.3),
+        0 0 0 6px #FFF,
+        0 0 0 10px #FFD700;
+    z-index: 1;
+    opacity: 0.95;
+}
+
+@media (max-width: 768px) {
+    .bride-portrait {
+        display: none;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .bride-portrait {
+        width: 150px;
+        height: 210px;
+        right: 3%;
+    }
 }
 
 .couple-photo-frame {

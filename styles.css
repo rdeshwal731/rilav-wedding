@@ -1376,7 +1376,7 @@ section.revealed {
 
 .footer-layout {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     gap: var(--spacing-xl);
     max-width: 1200px;
@@ -1394,8 +1394,11 @@ section.revealed {
 
 .bride-caption {
     text-align: center;
-    margin-top: var(--spacing-md);
+    margin-top: 0;
     max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .footer-center {
@@ -1403,10 +1406,10 @@ section.revealed {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     text-align: center;
     padding-top: 0;
-    min-height: 500px;
+    gap: var(--spacing-lg);
 }
 
 @media (max-width: 1024px) {
@@ -1473,6 +1476,7 @@ section.revealed {
     color: var(--dark-green);
     line-height: 1.6;
     margin-bottom: var(--spacing-sm);
+    margin-top: 0;
 }
 
 .blessing-text-sub {
@@ -1517,12 +1521,13 @@ section.revealed {
 }
 
 .footer-quote {
-    padding-top: var(--spacing-xl);
+    padding-top: 0;
     border-top: 2px solid var(--botanical-green);
     text-align: center;
     width: 100%;
     max-width: 500px;
-    margin-top: auto;
+    margin-top: 0;
+    padding-top: var(--spacing-sm);
 }
 
 .footer-quote p {

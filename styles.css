@@ -1379,7 +1379,7 @@ section.revealed {
     align-items: flex-start;
     justify-content: center;
     gap: var(--spacing-xl);
-    max-width: 1200px;
+    max-width: 1400px;
     width: 100%;
     position: relative;
     z-index: 2;
@@ -1424,6 +1424,7 @@ section.revealed {
     padding-top: 0;
     position: relative;
     min-height: 400px;
+    margin-left: var(--spacing-xl);
 }
 
 .calendar-btn {

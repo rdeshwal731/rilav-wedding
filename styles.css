@@ -1559,6 +1559,8 @@ section.revealed {
         margin-top: 0;
         /* Ensure touch target is at least 44px (iOS recommendation) */
         min-height: 44px;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+        touch-action: manipulation;
     }
     
     .contact-btn {
@@ -1630,6 +1632,9 @@ section.revealed {
     letter-spacing: 1px;
     text-transform: uppercase;
     margin: auto;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+    touch-action: manipulation;
+    min-height: 44px;
 }
 
 .calendar-btn:hover {
@@ -1665,6 +1670,9 @@ section.revealed {
     text-transform: uppercase;
     text-decoration: none;
     margin-top: var(--spacing-md);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+    touch-action: manipulation;
+    min-height: 44px;
 }
 
 .contact-btn:hover {

@@ -98,52 +98,66 @@ body {
     overflow: hidden;
 }
 
-/* Large mandala background - subtle rotation */
+/* Large visible mandala background - rotating */
 .card-front::before {
     content: '';
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 800px;
-    height: 800px;
+    width: 600px;
+    height: 600px;
     background-image: 
-        radial-gradient(circle at center, transparent 40%, rgba(255, 215, 0, 0.05) 40%, rgba(255, 215, 0, 0.05) 42%, transparent 42%),
-        radial-gradient(circle at center, transparent 50%, rgba(255, 140, 0, 0.08) 50%, rgba(255, 140, 0, 0.08) 52%, transparent 52%),
-        radial-gradient(circle at center, transparent 60%, rgba(255, 165, 0, 0.06) 60%, rgba(255, 165, 0, 0.06) 62%, transparent 62%),
-        conic-gradient(from 0deg at 50% 50%, 
-            transparent 0deg, rgba(255, 215, 0, 0.1) 10deg, transparent 20deg,
-            transparent 40deg, rgba(255, 140, 0, 0.12) 50deg, transparent 60deg,
-            transparent 80deg, rgba(255, 215, 0, 0.1) 90deg, transparent 100deg,
-            transparent 120deg, rgba(255, 140, 0, 0.12) 130deg, transparent 140deg,
-            transparent 160deg, rgba(255, 215, 0, 0.1) 170deg, transparent 180deg,
-            transparent 200deg, rgba(255, 140, 0, 0.12) 210deg, transparent 220deg,
-            transparent 240deg, rgba(255, 215, 0, 0.1) 250deg, transparent 260deg,
-            transparent 280deg, rgba(255, 140, 0, 0.12) 290deg, transparent 300deg,
-            transparent 320deg, rgba(255, 215, 0, 0.1) 330deg, transparent 340deg,
-            transparent 360deg
+        /* Outer decorative ring */
+        repeating-conic-gradient(from 0deg at 50% 50%, 
+            #FFD700 0deg 5deg, 
+            transparent 5deg 10deg, 
+            #FF8C00 10deg 15deg,
+            transparent 15deg 20deg,
+            #FFD700 20deg 25deg,
+            transparent 25deg 30deg
+        ),
+        /* Middle ring - petals */
+        repeating-conic-gradient(from 15deg at 50% 50%,
+            #FF6B00 0deg 10deg,
+            transparent 10deg 20deg,
+            #FFD700 20deg 30deg,
+            transparent 30deg 40deg
+        ),
+        /* Inner decorative dots */
+        radial-gradient(circle, #FFD700 2%, transparent 2%),
+        /* Center circle */
+        radial-gradient(circle at center, 
+            #FFD700 0%, 
+            #FF8C00 15%, 
+            transparent 25%,
+            transparent 35%,
+            rgba(255, 140, 0, 0.3) 35%,
+            rgba(255, 140, 0, 0.3) 37%,
+            transparent 37%,
+            transparent 45%,
+            rgba(255, 215, 0, 0.4) 45%,
+            rgba(255, 215, 0, 0.4) 47%,
+            transparent 47%
         );
-    background-size: 100% 100%;
-    opacity: 0.5;
-    animation: mandalaRotate 60s linear infinite;
+    background-size: 100% 100%, 100% 100%, 40px 40px, 100% 100%;
+    background-position: center, center, center, center;
+    opacity: 0.35;
+    animation: mandalaRotate 80s linear infinite;
     pointer-events: none;
 }
 
-/* Smaller decorative mandalas in corners */
+/* Corner mandala decorations */
 .card-front::after {
-    content: '';
+    content: '🪔 ✦ 🪔';
     position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image:
-        radial-gradient(circle at 15% 15%, rgba(255, 140, 0, 0.15) 0%, transparent 15%),
-        radial-gradient(circle at 85% 15%, rgba(255, 215, 0, 0.15) 0%, transparent 15%),
-        radial-gradient(circle at 15% 85%, rgba(255, 100, 50, 0.15) 0%, transparent 15%),
-        radial-gradient(circle at 85% 85%, rgba(255, 180, 0, 0.15) 0%, transparent 15%);
-    background-size: 200px 200px;
-    background-repeat: no-repeat;
-    animation: mandalaRotate 80s linear infinite reverse;
-    pointer-events: none;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    opacity: 0.6;
+    letter-spacing: 100px;
+    animation: flicker 3s ease-in-out infinite;
 }
 
 @keyframes mandalaRotate {
@@ -152,6 +166,15 @@ body {
     }
     to {
         transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes flicker {
+    0%, 100% {
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 0.9;
     }
 }
 

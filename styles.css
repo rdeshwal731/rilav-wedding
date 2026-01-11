@@ -86,7 +86,7 @@ body {
     left: 0;
     width: 100%;
     height: 100vh;
-    background: linear-gradient(135deg, #050F1A 0%, #0F1F35 30%, #1A2F4A 60%, #0F1F35 90%, #050F1A 100%);
+    background: linear-gradient(135deg, #FFF5E6 0%, #FFE4CC 20%, #FFD4A0 40%, #FFB88C 60%, #FF9A76 80%, #FFB6C1 100%);
     z-index: 1000;
     display: flex;
     align-items: center;
@@ -96,177 +96,6 @@ body {
     overflow: hidden;
 }
 
-/* Four Corner Mandalas - Glowing Particle/Dot Style */
-.mandala-corner {
-    position: absolute;
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    background-image: 
-        /* Radial spokes - glowing lines from center */
-        repeating-conic-gradient(from 0deg,
-            transparent 0deg 11.25deg,
-            rgba(255, 215, 0, 0.8) 11.25deg 11.5deg,
-            transparent 11.5deg 22.5deg
-        ),
-        repeating-conic-gradient(from 5.625deg,
-            transparent 0deg 11.25deg,
-            rgba(255, 165, 0, 0.7) 11.25deg 11.5deg,
-            transparent 11.5deg 22.5deg
-        ),
-        /* Concentric rings made of glowing particles */
-        radial-gradient(circle,
-            rgba(255, 215, 0, 0.9) 0%, rgba(255, 140, 0, 0.8) 1%, transparent 2%,
-            transparent 8%, rgba(255, 215, 0, 0.6) 8.5%, rgba(255, 165, 0, 0.5) 9%, transparent 9.5%,
-            transparent 12%, rgba(255, 140, 0, 0.5) 12.5%, rgba(255, 215, 0, 0.4) 13%, transparent 13.5%,
-            transparent 18%, rgba(255, 165, 0, 0.4) 18.5%, rgba(255, 140, 0, 0.3) 19%, transparent 19.5%,
-            transparent 25%, rgba(255, 215, 0, 0.5) 25.5%, rgba(255, 165, 0, 0.4) 26%, transparent 26.5%,
-            transparent 32%, rgba(255, 140, 0, 0.4) 32.5%, rgba(255, 215, 0, 0.3) 33%, transparent 33.5%,
-            transparent 40%, rgba(255, 165, 0, 0.3) 40.5%, rgba(255, 140, 0, 0.2) 41%, transparent 41.5%,
-            transparent 45%, rgba(255, 215, 0, 0.2) 45.5%, transparent 46%
-        ),
-        /* Additional particle layers */
-        radial-gradient(circle,
-            transparent 0%, transparent 6%,
-            rgba(255, 215, 0, 0.3) 6.2%, transparent 6.5%,
-            transparent 14%, rgba(255, 140, 0, 0.3) 14.2%, transparent 14.5%,
-            transparent 22%, rgba(255, 165, 0, 0.3) 22.2%, transparent 22.5%,
-            transparent 30%, rgba(255, 215, 0, 0.2) 30.2%, transparent 30.5%,
-            transparent 38%, rgba(255, 140, 0, 0.2) 38.2%, transparent 38.5%
-        ),
-        /* Fine particle dots */
-        repeating-conic-gradient(from 0deg,
-            transparent 0deg 2.25deg,
-            rgba(255, 215, 0, 0.4) 2.25deg 2.35deg,
-            transparent 2.35deg 4.5deg,
-            rgba(255, 140, 0, 0.3) 4.5deg 4.6deg,
-            transparent 4.6deg 6.75deg,
-            rgba(255, 165, 0, 0.3) 6.75deg 6.85deg,
-            transparent 6.85deg 9deg,
-            rgba(255, 215, 0, 0.2) 9deg 9.1deg,
-            transparent 9.1deg 11.25deg
-        );
-    animation: mandalaRotate 40s linear infinite;
-    opacity: 0.95;
-    filter: blur(0.5px);
-    box-shadow: 
-        0 0 80px rgba(255, 140, 0, 0.9),
-        0 0 120px rgba(255, 215, 0, 0.7),
-        inset 0 0 60px rgba(255, 215, 0, 0.4);
-}
-
-.mandala-top-left {
-    top: 50px;
-    left: 50px;
-}
-
-.mandala-top-right {
-    top: 50px;
-    right: 50px;
-    animation-direction: reverse;
-}
-
-.mandala-bottom-left {
-    bottom: 50px;
-    left: 50px;
-    animation-delay: -10s;
-}
-
-.mandala-bottom-right {
-    bottom: 50px;
-    right: 50px;
-    animation-direction: reverse;
-    animation-delay: -20s;
-}
-
-/* Large Central Mandala - Glowing Particle/Dot Style */
-.mandala-central {
-    position: absolute;
-    width: 500px;
-    height: 500px;
-    border-radius: 50%;
-    background-image: 
-        /* Radial spokes - glowing lines from center (32 spokes) */
-        repeating-conic-gradient(from 0deg,
-            transparent 0deg 5.625deg,
-            rgba(255, 215, 0, 0.9) 5.625deg 5.8deg,
-            transparent 5.8deg 11.25deg
-        ),
-        repeating-conic-gradient(from 2.8125deg,
-            transparent 0deg 5.625deg,
-            rgba(255, 165, 0, 0.8) 5.625deg 5.8deg,
-            transparent 5.8deg 11.25deg
-        ),
-        repeating-conic-gradient(from 1.40625deg,
-            transparent 0deg 5.625deg,
-            rgba(255, 140, 0, 0.7) 5.625deg 5.8deg,
-            transparent 5.8deg 11.25deg
-        ),
-        /* Concentric rings made of glowing particles - many layers */
-        radial-gradient(circle,
-            rgba(255, 215, 0, 1) 0%, rgba(255, 140, 0, 0.95) 0.5%, rgba(255, 165, 0, 0.9) 1%, transparent 1.5%,
-            transparent 3%, rgba(255, 215, 0, 0.7) 3.3%, rgba(255, 165, 0, 0.6) 3.6%, transparent 4%,
-            transparent 6%, rgba(255, 140, 0, 0.6) 6.3%, rgba(255, 215, 0, 0.5) 6.6%, transparent 7%,
-            transparent 9%, rgba(255, 165, 0, 0.5) 9.3%, rgba(255, 140, 0, 0.4) 9.6%, transparent 10%,
-            transparent 12%, rgba(255, 215, 0, 0.6) 12.3%, rgba(255, 165, 0, 0.5) 12.6%, transparent 13%,
-            transparent 15%, rgba(255, 140, 0, 0.5) 15.3%, rgba(255, 215, 0, 0.4) 15.6%, transparent 16%,
-            transparent 18%, rgba(255, 165, 0, 0.4) 18.3%, rgba(255, 140, 0, 0.3) 18.6%, transparent 19%,
-            transparent 21%, rgba(255, 215, 0, 0.5) 21.3%, rgba(255, 165, 0, 0.4) 21.6%, transparent 22%,
-            transparent 24%, rgba(255, 140, 0, 0.4) 24.3%, rgba(255, 215, 0, 0.3) 24.6%, transparent 25%,
-            transparent 27%, rgba(255, 165, 0, 0.3) 27.3%, rgba(255, 140, 0, 0.2) 27.6%, transparent 28%,
-            transparent 30%, rgba(255, 215, 0, 0.4) 30.3%, rgba(255, 165, 0, 0.3) 30.6%, transparent 31%,
-            transparent 33%, rgba(255, 140, 0, 0.3) 33.3%, rgba(255, 215, 0, 0.2) 33.6%, transparent 34%,
-            transparent 36%, rgba(255, 165, 0, 0.2) 36.3%, rgba(255, 140, 0, 0.15) 36.6%, transparent 37%,
-            transparent 39%, rgba(255, 215, 0, 0.2) 39.3%, rgba(255, 165, 0, 0.15) 39.6%, transparent 40%,
-            transparent 42%, rgba(255, 140, 0, 0.15) 42.3%, rgba(255, 215, 0, 0.1) 42.6%, transparent 43%,
-            transparent 45%, rgba(255, 165, 0, 0.1) 45.3%, transparent 45.6%
-        ),
-        /* Additional particle layers for density */
-        radial-gradient(circle,
-            transparent 0%, transparent 4%,
-            rgba(255, 215, 0, 0.4) 4.2%, transparent 4.5%,
-            transparent 8%, rgba(255, 140, 0, 0.4) 8.2%, transparent 8.5%,
-            transparent 12%, rgba(255, 165, 0, 0.4) 12.2%, transparent 12.5%,
-            transparent 16%, rgba(255, 215, 0, 0.3) 16.2%, transparent 16.5%,
-            transparent 20%, rgba(255, 140, 0, 0.3) 20.2%, transparent 20.5%,
-            transparent 24%, rgba(255, 165, 0, 0.3) 24.2%, transparent 24.5%,
-            transparent 28%, rgba(255, 215, 0, 0.2) 28.2%, transparent 28.5%,
-            transparent 32%, rgba(255, 140, 0, 0.2) 32.2%, transparent 32.5%,
-            transparent 36%, rgba(255, 165, 0, 0.2) 36.2%, transparent 36.5%,
-            transparent 40%, rgba(255, 215, 0, 0.15) 40.2%, transparent 40.5%,
-            transparent 44%, rgba(255, 140, 0, 0.1) 44.2%, transparent 44.5%
-        ),
-        /* Fine particle dots throughout */
-        repeating-conic-gradient(from 0deg,
-            transparent 0deg 1.125deg,
-            rgba(255, 215, 0, 0.5) 1.125deg 1.2deg,
-            transparent 1.2deg 2.25deg,
-            rgba(255, 140, 0, 0.4) 2.25deg 2.35deg,
-            transparent 2.35deg 3.375deg,
-            rgba(255, 165, 0, 0.4) 3.375deg 3.5deg,
-            transparent 3.5deg 4.5deg,
-            rgba(255, 215, 0, 0.3) 4.5deg 4.6deg,
-            transparent 4.6deg 5.625deg
-        ),
-        /* Ultra-fine particle layer */
-        repeating-conic-gradient(from 0.5625deg,
-            transparent 0deg 0.5625deg,
-            rgba(255, 215, 0, 0.2) 0.5625deg 0.65deg,
-            transparent 0.65deg 1.125deg,
-            rgba(255, 140, 0, 0.15) 1.125deg 1.2deg,
-            transparent 1.2deg 1.6875deg,
-            rgba(255, 165, 0, 0.15) 1.6875deg 1.75deg,
-            transparent 1.75deg 2.25deg
-        );
-    animation: mandalaRotate 50s linear infinite;
-    opacity: 0.9;
-    filter: blur(0.8px);
-    box-shadow: 
-        0 0 150px rgba(255, 140, 0, 1),
-        0 0 220px rgba(255, 215, 0, 0.8),
-        0 0 300px rgba(255, 165, 0, 0.6),
-        inset 0 0 120px rgba(255, 215, 0, 0.5);
-}
 
 @keyframes mandalaRotate {
     from {
@@ -285,109 +114,19 @@ body {
 }
 
 .card-cover-content {
-    display: none;
-}
-
-.card-cover-content-new {
+    text-align: center;
+    padding: var(--spacing-xl);
+    max-width: 550px;
     position: relative;
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    max-width: 900px;
+    z-index: 2;
     animation: fadeInScale 1s ease-out;
-}
-
-/* Names positioned OUTSIDE mandala (left and right) */
-.name-left {
-    position: absolute;
-    left: 5%;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 12;
-}
-
-.name-right {
-    position: absolute;
-    right: 2%;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 12;
-}
-
-.bride-name-cover,
-.groom-name-cover {
-    font-family: var(--font-heading);
-    font-size: 4rem;
-    background: linear-gradient(135deg, #FFD700 0%, #FFA500 30%, #FFD700 60%, #FF8C00 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    font-weight: 700;
-    text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
-    margin: 0;
-    filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.6));
-}
-
-/* Central content inside mandala */
-.central-content {
-    position: relative;
-    z-index: 11;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--spacing-md);
-    text-align: center;
-}
-
-.ganesh-center {
-    text-align: center;
-    position: relative;
-    z-index: 11;
-}
-
-.ganesh-img-cover {
-    display: none;
-}
-
-.sanskrit-cover {
-    font-family: var(--font-sanskrit);
-    font-size: 1.4rem;
-    color: #FFD700;
-    font-weight: 600;
-    text-shadow: 
-        0 0 10px rgba(255, 215, 0, 0.8),
-        2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.sanskrit-above {
-    position: absolute;
-    top: 25%;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 12;
-    margin: 0;
-}
-
-.wedding-below {
-    position: absolute;
-    bottom: 25%;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 12;
-    margin: 0;
-}
-
-.wedding-text-new {
-    font-size: 1.2rem;
-    color: #FFD700;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    font-weight: 500;
-    text-shadow: 
-        0 0 10px rgba(255, 215, 0, 0.8),
-        1px 1px 3px rgba(0, 0, 0, 0.5);
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 25px;
+    box-shadow: 
+        0 20px 60px rgba(255, 140, 0, 0.3),
+        0 0 0 2px rgba(255, 215, 0, 0.4),
+        inset 0 0 30px rgba(255, 215, 0, 0.1);
+    border: 3px solid rgba(255, 140, 0, 0.3);
 }
 
 @keyframes fadeInScale {

@@ -307,7 +307,8 @@ section.revealed {
     width: 100%;
     height: 100%;
     background-size: cover;
-    background-position: center;
+    background-position: center center;
+    background-repeat: no-repeat;
     opacity: 0.08;
     filter: blur(2px);
     z-index: 0;
@@ -410,7 +411,8 @@ section.revealed {
     height: 200px;
     border-radius: 50%;
     background-size: cover;
-    background-position: center;
+    background-position: center center;
+    background-repeat: no-repeat;
     border: 4px solid var(--gold);
     box-shadow: 
         0 10px 30px rgba(0, 0, 0, 0.1),
@@ -418,6 +420,13 @@ section.revealed {
         0 0 0 14px var(--botanical-green);
     position: relative;
     margin: 0 auto;
+}
+
+@media (max-width: 480px) {
+    .photo-circle {
+        width: 180px;
+        height: 180px;
+    }
 }
 
 .blessing-content {
@@ -465,9 +474,17 @@ section.revealed {
     width: 40%;
     height: 100%;
     background-size: cover;
-    background-position: center;
+    background-position: center center;
+    background-repeat: no-repeat;
     opacity: 0.06;
     clip-path: polygon(30% 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+@media (max-width: 768px) {
+    .couple-photo-side {
+        width: 50%;
+        opacity: 0.04;
+    }
 }
 
 .details-content {
@@ -615,9 +632,11 @@ section.revealed {
     width: 100%;
     height: 100%;
     background-size: cover;
-    background-position: center;
+    background-position: center center;
+    background-repeat: no-repeat;
     opacity: 0.05;
     filter: blur(3px);
+    z-index: 0;
 }
 
 .footer-content {

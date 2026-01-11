@@ -86,7 +86,7 @@ body {
     left: 0;
     width: 100%;
     height: 100vh;
-    background: linear-gradient(135deg, #FFF5E6 0%, #FFE4CC 20%, #FFD4A0 40%, #FFB88C 60%, #FF9A76 80%, #FFB6C1 100%);
+    background: linear-gradient(135deg, #0A1929 0%, #1A3A5A 30%, #2E5C8A 60%, #1A3A5A 90%, #0A1929 100%);
     z-index: 1000;
     display: flex;
     align-items: center;
@@ -96,27 +96,51 @@ body {
     overflow: hidden;
 }
 
-/* Four Corner Mandalas - Rotating Circles */
+/* Four Corner Mandalas - Rotating Circles - HIGHLY DETAILED */
 .mandala-corner {
     position: absolute;
     width: 150px;
     height: 150px;
     border-radius: 50%;
     background-image: 
+        /* Outer petal layer - 16 petals */
         repeating-conic-gradient(from 0deg, 
-            #FFD700 0deg 15deg, 
-            #FF8C00 15deg 30deg,
-            #FFA500 30deg 45deg,
-            #FFD700 45deg 60deg
+            #FFD700 0deg 11.25deg, 
+            #FF8C00 11.25deg 22.5deg,
+            #FFA500 22.5deg 33.75deg,
+            #FFD700 33.75deg 45deg
         ),
+        /* Second petal layer - offset */
+        repeating-conic-gradient(from 5.625deg,
+            transparent 0deg 5deg,
+            #FFA500 5deg 11.25deg,
+            transparent 11.25deg 16.25deg
+        ),
+        /* Inner decorative dots */
+        repeating-conic-gradient(from 0deg,
+            #FFD700 0deg 2deg,
+            transparent 2deg 4deg
+        ),
+        /* Ornate concentric rings */
         radial-gradient(circle, 
-            #FFD700 0%, #FF8C00 20%, transparent 25%,
-            transparent 35%, #FFA500 35%, #FFD700 40%, transparent 42%,
-            transparent 50%, rgba(255, 140, 0, 0.6) 50%, transparent 52%
+            transparent 0%, transparent 8%,
+            #FFD700 8%, #FF8C00 10%, transparent 12%,
+            transparent 18%, #FFA500 18%, #FFD700 20%, transparent 22%,
+            transparent 28%, #FF8C00 28%, transparent 30%,
+            transparent 35%, #FFA500 35%, #FFD700 37%, transparent 39%,
+            transparent 42%, rgba(255, 140, 0, 0.8) 42%, rgba(255, 215, 0, 0.9) 44%, transparent 46%,
+            transparent 50%, rgba(255, 165, 0, 0.6) 50%, transparent 52%
+        ),
+        /* Center decorative element */
+        radial-gradient(circle at center,
+            #FFD700 0%, #FF8C00 15%, transparent 20%
         );
     animation: mandalaRotate 40s linear infinite;
-    opacity: 0.7;
-    box-shadow: 0 0 30px rgba(255, 140, 0, 0.4);
+    opacity: 0.85;
+    box-shadow: 
+        0 0 40px rgba(255, 140, 0, 0.6),
+        inset 0 0 30px rgba(255, 215, 0, 0.3);
+    border: 2px solid rgba(255, 215, 0, 0.4);
 }
 
 .mandala-top-left {
@@ -143,42 +167,64 @@ body {
     animation-delay: -20s;
 }
 
-/* Large Central Mandala - Rotating Circle */
+/* Large Central Mandala - Rotating Circle - HIGHLY DETAILED & ORNATE */
 .mandala-central {
     position: absolute;
     width: 500px;
     height: 500px;
     border-radius: 50%;
     background-image: 
-        /* Outer ornate petals */
+        /* Layer 1: Outer large petals - 24 petals */
         repeating-conic-gradient(from 0deg, 
-            #FFD700 0deg 10deg, 
-            #FF8C00 10deg 20deg,
-            #FFA500 20deg 30deg
+            #FFD700 0deg 7.5deg, 
+            #FF8C00 7.5deg 15deg,
+            #FFA500 15deg 22.5deg,
+            #FFD700 22.5deg 30deg
         ),
-        /* Middle layer */
-        repeating-conic-gradient(from 5deg,
-            #FFA500 0deg 7.5deg,
-            transparent 7.5deg 15deg
+        /* Layer 2: Medium petals - offset */
+        repeating-conic-gradient(from 3.75deg,
+            transparent 0deg 3deg,
+            #FFA500 3deg 7.5deg,
+            transparent 7.5deg 10.5deg,
+            #FF8C00 10.5deg 15deg,
+            transparent 15deg 18deg
         ),
-        /* Inner decorative ring */
+        /* Layer 3: Small decorative petals */
+        repeating-conic-gradient(from 1.875deg,
+            rgba(255, 215, 0, 0.9) 0deg 2deg,
+            transparent 2deg 4deg,
+            rgba(255, 140, 0, 0.8) 4deg 6deg,
+            transparent 6deg 8deg
+        ),
+        /* Layer 4: Ornate ring pattern */
         repeating-conic-gradient(from 0deg,
-            rgba(255, 215, 0, 0.9) 0deg 3deg,
-            transparent 3deg 6deg
+            #FFD700 0deg 1.5deg,
+            transparent 1.5deg 3deg
         ),
-        /* Concentric circles */
+        /* Layer 5: Multiple concentric decorative rings */
         radial-gradient(circle, 
-            transparent 0%, transparent 15%,
-            #FFD700 15%, #FF8C00 18%, transparent 20%,
-            transparent 28%, #FFA500 28%, #FFD700 31%, transparent 33%,
-            transparent 38%, #FF8C00 38%, transparent 41%,
-            transparent 45%, rgba(255, 140, 0, 0.8) 45%, rgba(255, 215, 0, 0.9) 48%, transparent 50%
+            transparent 0%, transparent 10%,
+            #FFD700 10%, #FF8C00 12%, transparent 14%,
+            transparent 18%, #FFA500 18%, #FFD700 20%, transparent 22%,
+            transparent 26%, #FF8C00 26%, #FFA500 28%, transparent 30%,
+            transparent 33%, #FFD700 33%, #FF8C00 35%, transparent 37%,
+            transparent 40%, #FFA500 40%, #FFD700 42%, transparent 44%,
+            transparent 46%, rgba(255, 140, 0, 0.9) 46%, rgba(255, 215, 0, 1) 48%, transparent 50%,
+            transparent 52%, rgba(255, 165, 0, 0.7) 52%, transparent 54%,
+            transparent 56%, rgba(255, 140, 0, 0.6) 56%, transparent 58%
+        ),
+        /* Layer 6: Center ornate pattern */
+        radial-gradient(circle at center,
+            #FFD700 0%, #FF8C00 8%, transparent 12%,
+            transparent 15%, #FFA500 15%, #FFD700 18%, transparent 20%
         );
     animation: mandalaRotate 50s linear infinite;
-    opacity: 0.6;
+    opacity: 0.75;
     box-shadow: 
-        0 0 50px rgba(255, 140, 0, 0.5),
-        inset 0 0 50px rgba(255, 215, 0, 0.2);
+        0 0 80px rgba(255, 140, 0, 0.7),
+        0 0 120px rgba(255, 215, 0, 0.4),
+        inset 0 0 60px rgba(255, 215, 0, 0.3);
+    border: 3px solid rgba(255, 215, 0, 0.5);
 }
 
 @keyframes mandalaRotate {
@@ -205,10 +251,53 @@ body {
     position: relative;
     z-index: 10;
     display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 900px;
+    animation: fadeInScale 1s ease-out;
+}
+
+/* Names positioned OUTSIDE mandala (left and right) */
+.name-left {
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 12;
+}
+
+.name-right {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 12;
+}
+
+.bride-name-cover,
+.groom-name-cover {
+    font-family: var(--font-heading);
+    font-size: 4rem;
+    background: linear-gradient(135deg, #FFD700 0%, #FFA500 30%, #FFD700 60%, #FF8C00 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+    margin: 0;
+    filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.6));
+}
+
+/* Central content inside mandala */
+.central-content {
+    position: relative;
+    z-index: 11;
+    display: flex;
     flex-direction: column;
     align-items: center;
     gap: var(--spacing-md);
-    animation: fadeInScale 1s ease-out;
+    text-align: center;
 }
 
 .ganesh-center {
@@ -220,46 +309,29 @@ body {
 .ganesh-img-cover {
     width: 100px;
     height: auto;
-    filter: drop-shadow(0 5px 15px rgba(255, 140, 0, 0.4));
+    filter: drop-shadow(0 5px 20px rgba(255, 215, 0, 0.6));
     margin-bottom: var(--spacing-sm);
 }
 
 .sanskrit-cover {
     font-family: var(--font-sanskrit);
     font-size: 1.4rem;
-    color: #1B5E20;
+    color: #FFD700;
     font-weight: 600;
-    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
-}
-
-.names-layout {
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-lg);
-    position: relative;
-    z-index: 11;
-}
-
-.bride-name-cover,
-.groom-name-cover {
-    font-family: var(--font-heading);
-    font-size: 3.5rem;
-    background: linear-gradient(135deg, #FF6B00 0%, #FF8C00 30%, #FFD700 60%, #FF6B00 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    font-weight: 700;
-    text-shadow: 2px 2px 6px rgba(255, 140, 0, 0.3);
-    margin: 0;
+    text-shadow: 
+        0 0 10px rgba(255, 215, 0, 0.8),
+        2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .wedding-text-new {
     font-size: 1.2rem;
-    color: var(--text-dark);
+    color: #FFD700;
     letter-spacing: 3px;
     text-transform: uppercase;
     font-weight: 500;
-    text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8);
+    text-shadow: 
+        0 0 10px rgba(255, 215, 0, 0.8),
+        1px 1px 3px rgba(0, 0, 0, 0.5);
     margin-bottom: var(--spacing-lg);
 }
 
@@ -375,9 +447,12 @@ body {
 
 .tap-instruction p {
     font-size: 1rem;
-    color: var(--gold);
+    color: #FFD700;
     font-weight: 500;
     letter-spacing: 1px;
+    text-shadow: 
+        0 0 10px rgba(255, 215, 0, 0.8),
+        1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .tap-icon {
@@ -643,6 +718,64 @@ section:last-child {
 }
 
 /* Fix mobile scrolling issues */
+/* Mobile responsive for landing page mandalas */
+@media (max-width: 768px) {
+    .mandala-corner {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .mandala-top-left {
+        top: 30px;
+        left: 30px;
+    }
+    
+    .mandala-top-right {
+        top: 30px;
+        right: 30px;
+    }
+    
+    .mandala-bottom-left {
+        bottom: 30px;
+        left: 30px;
+    }
+    
+    .mandala-bottom-right {
+        bottom: 30px;
+        right: 30px;
+    }
+    
+    .mandala-central {
+        width: 350px;
+        height: 350px;
+    }
+    
+    .name-left,
+    .name-right {
+        font-size: 2.5rem;
+    }
+    
+    .name-left {
+        left: 2%;
+    }
+    
+    .name-right {
+        right: 2%;
+    }
+    
+    .ganesh-img-cover {
+        width: 80px;
+    }
+    
+    .sanskrit-cover {
+        font-size: 1.1rem;
+    }
+    
+    .wedding-text-new {
+        font-size: 1rem;
+    }
+}
+
 @media (max-width: 768px) {
     section {
         min-height: auto;

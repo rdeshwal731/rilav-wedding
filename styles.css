@@ -239,7 +239,7 @@ body {
     width: 100%;
     height: 100vh;
     pointer-events: none;
-    z-index: 1;
+    z-index: 999;
     overflow: hidden;
 }
 
@@ -250,26 +250,26 @@ body {
     opacity: 0.85;
 }
 
-/* Cherry blossom petal shape */
+/* Marigold flower petal shape - larger and more visible */
 .petal::before,
 .petal::after {
     content: '';
     position: absolute;
-    width: 16px;
-    height: 16px;
+    width: 20px;
+    height: 20px;
     border-radius: 50% 0 50% 50%;
 }
 
 .petal::before {
-    background: linear-gradient(135deg, #FFB6C1 0%, #FFC0CB 100%);
+    background: linear-gradient(135deg, #FF8C00 0%, #FFA500 100%);
     transform: rotate(45deg);
-    box-shadow: 0 0 8px rgba(255, 182, 193, 0.6);
+    box-shadow: 0 0 10px rgba(255, 140, 0, 0.7);
 }
 
 .petal::after {
-    background: linear-gradient(135deg, #FFC0CB 0%, #FFE4E1 100%);
+    background: linear-gradient(135deg, #FFA500 0%, #FFB347 100%);
     transform: rotate(-45deg);
-    box-shadow: 0 0 8px rgba(255, 192, 203, 0.6);
+    box-shadow: 0 0 10px rgba(255, 165, 0, 0.7);
 }
 
 /* Different petal variations with wind effect */
@@ -304,27 +304,25 @@ body {
     animation-delay: 9s;
 }
 
-/* Gold cherry blossoms */
-.petal-1::before { background: linear-gradient(135deg, #FFD700 0%, #FFF8DC 100%); }
-.petal-1::after { background: linear-gradient(135deg, #FFF8DC 0%, #FFFACD 100%); }
+/* Marigold orange flowers - Deep Orange (most common) */
+.petal-1::before,
+.petal-4::before { background: linear-gradient(135deg, #FF8C00 0%, #FFA500 100%); }
+.petal-1::after,
+.petal-4::after { background: linear-gradient(135deg, #FFA500 0%, #FFB347 100%); }
 
-/* Pink cherry blossoms - most common */
-.petal-2::before,
-.petal-4::before { background: linear-gradient(135deg, #FFB6C1 0%, #FFC0CB 100%); }
-.petal-2::after,
-.petal-4::after { background: linear-gradient(135deg, #FFC0CB 0%, #FFE4E1 100%); }
+/* Bright Orange marigolds */
+.petal-2::before { background: linear-gradient(135deg, #FF6600 0%, #FF8C00 100%); }
+.petal-2::after { background: linear-gradient(135deg, #FF8C00 0%, #FFA500 100%); }
 
-/* White cherry blossoms */
-.petal-3::before { background: linear-gradient(135deg, #FFF 0%, #FFE4E1 100%); }
-.petal-3::after { background: linear-gradient(135deg, #FFE4E1 0%, #FFF5EE 100%); }
+/* Golden yellow marigolds */
+.petal-3::before,
+.petal-6::before { background: linear-gradient(135deg, #FFD700 0%, #FFED4E 100%); }
+.petal-3::after,
+.petal-6::after { background: linear-gradient(135deg, #FFED4E 0%, #FFF9A6 100%); }
 
-/* Lavender cherry blossoms */
-.petal-5::before { background: linear-gradient(135deg, #E6E6FA 0%, #DDA0DD 100%); }
-.petal-5::after { background: linear-gradient(135deg, #DDA0DD 0%, #F8F8FF 100%); }
-
-/* Peach cherry blossoms */
-.petal-6::before { background: linear-gradient(135deg, #FFDAB9 0%, #FFE4B5 100%); }
-.petal-6::after { background: linear-gradient(135deg, #FFE4B5 0%, #FFF8DC 100%); }
+/* Reddish-orange marigolds */
+.petal-5::before { background: linear-gradient(135deg, #FF4500 0%, #FF6347 100%); }
+.petal-5::after { background: linear-gradient(135deg, #FF6347 0%, #FF8C69 100%); }
 
 /* Wind-driven falling animations */
 @keyframes cherryFallWind1 {
@@ -599,10 +597,31 @@ section.revealed {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
     .photo-circle {
         width: 180px;
         height: 180px;
+        border: 4px solid #FFB6C1;
+        box-shadow: 
+            0 8px 25px rgba(255, 182, 193, 0.4),
+            0 0 0 6px #FFF,
+            0 0 0 10px #FFB6C1,
+            0 0 0 14px #FFC0CB,
+            0 0 0 18px #FFD700;
+    }
+}
+
+@media (max-width: 480px) {
+    .photo-circle {
+        width: 160px;
+        height: 160px;
+        border: 3px solid #FFB6C1;
+        box-shadow: 
+            0 6px 20px rgba(255, 182, 193, 0.4),
+            0 0 0 5px #FFF,
+            0 0 0 8px #FFB6C1,
+            0 0 0 11px #FFC0CB,
+            0 0 0 14px #FFD700;
     }
 }
 

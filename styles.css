@@ -180,18 +180,164 @@ body {
     padding: var(--spacing-xl);
     max-width: 600px;
     position: relative;
-    z-index: 2;
+    z-index: 3;
     animation: fadeInScale 1s ease-out;
     background: transparent;
-    backdrop-filter: none;
-    border-radius: 0;
-    box-shadow: none;
-    border: none;
 }
 
-.card-cover-content::before,
-.card-cover-content::after {
-    display: none;
+/* Circular Wreath Frame */
+.wreath-frame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 182, 193, 0.4);
+    z-index: 1;
+    box-shadow: 
+        0 0 0 2px rgba(255, 218, 185, 0.3),
+        0 0 0 4px rgba(255, 192, 203, 0.2),
+        inset 0 0 50px rgba(255, 182, 193, 0.1);
+}
+
+.wreath-frame::before {
+    content: '🌸';
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+.wreath-frame::after {
+    content: '🌸';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    animation: float 3s ease-in-out infinite 1.5s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+}
+
+/* Corner Decorations */
+.corner-decoration {
+    position: absolute;
+    font-size: 3rem;
+    z-index: 2;
+    animation: cornerFloat 4s ease-in-out infinite;
+    filter: drop-shadow(0 5px 10px rgba(255, 182, 193, 0.3));
+}
+
+.corner-top-left {
+    top: 30px;
+    left: 30px;
+    animation-delay: 0s;
+}
+
+.corner-top-right {
+    top: 30px;
+    right: 30px;
+    animation-delay: 1s;
+}
+
+.corner-bottom-left {
+    bottom: 30px;
+    left: 30px;
+    animation-delay: 2s;
+}
+
+.corner-bottom-right {
+    bottom: 30px;
+    right: 30px;
+    animation-delay: 3s;
+}
+
+@keyframes cornerFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.8;
+    }
+    50% {
+        transform: translateY(-15px) rotate(10deg);
+        opacity: 1;
+    }
+}
+
+/* Floating Decorative Elements */
+.floating-decor {
+    position: absolute;
+    font-size: 1.5rem;
+    z-index: 2;
+    color: rgba(255, 182, 193, 0.6);
+    animation: floatAround 8s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.decor-1 {
+    top: 20%;
+    left: 15%;
+    animation-delay: 0s;
+}
+
+.decor-2 {
+    top: 15%;
+    right: 20%;
+    animation-delay: 1.3s;
+}
+
+.decor-3 {
+    top: 50%;
+    left: 10%;
+    animation-delay: 2.6s;
+}
+
+.decor-4 {
+    top: 50%;
+    right: 10%;
+    animation-delay: 3.9s;
+}
+
+.decor-5 {
+    bottom: 20%;
+    left: 15%;
+    animation-delay: 5.2s;
+}
+
+.decor-6 {
+    bottom: 15%;
+    right: 20%;
+    animation-delay: 6.5s;
+}
+
+@keyframes floatAround {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.4;
+    }
+    25% {
+        transform: translate(20px, -20px) scale(1.2);
+        opacity: 0.7;
+    }
+    50% {
+        transform: translate(-15px, -30px) scale(0.9);
+        opacity: 0.6;
+    }
+    75% {
+        transform: translate(-20px, 15px) scale(1.1);
+        opacity: 0.8;
+    }
 }
 
 @keyframes fadeInScale {

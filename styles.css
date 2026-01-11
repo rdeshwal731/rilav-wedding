@@ -1586,6 +1586,41 @@ section.revealed {
     font-size: 1.5rem;
 }
 
+.contact-btn {
+    background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 50%, #1B5E20 100%);
+    color: white;
+    border: none;
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    font-family: var(--font-body);
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(46, 125, 50, 0.4);
+    transition: var(--transition-fast);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-top: var(--spacing-md);
+}
+
+.contact-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(46, 125, 50, 0.6);
+    background: linear-gradient(135deg, #2E7D32 0%, #1B5E20 50%, #0D4F1A 100%);
+}
+
+.contact-btn:active {
+    transform: translateY(0);
+}
+
+.phone-icon {
+    font-size: 1.5rem;
+}
+
 .footer-quote {
     padding-top: var(--spacing-sm);
     border-top: 2px solid var(--botanical-green);

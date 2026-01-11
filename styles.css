@@ -1390,6 +1390,12 @@ section.revealed {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
+}
+
+/* Align blessing text with green line/quote */
+.bride-caption {
+    margin-top: var(--spacing-md);
 }
 
 .bride-portrait-footer {
@@ -1414,18 +1420,26 @@ section.revealed {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
     padding-top: 0;
 }
 
-/* Align green line/quote with blessing text by matching top position */
 .calendar-btn {
     margin-bottom: var(--spacing-lg);
-    align-self: flex-start;
+}
+
+/* Create a wrapper for green line + quote to align with blessing text */
+.footer-quote-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 0;
 }
 
 .footer-quote {
     margin-top: 0;
-    align-self: flex-start;
+    width: 100%;
 }
 
 .bride-section {

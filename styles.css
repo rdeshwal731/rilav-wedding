@@ -794,6 +794,44 @@ section:last-child {
 }
 
 @media (max-width: 768px) {
+    .wreath-frame {
+        width: 350px;
+        height: 350px;
+    }
+    
+    .wreath-frame::before,
+    .wreath-frame::after {
+        font-size: 1.5rem;
+    }
+    
+    .corner-decoration {
+        font-size: 2rem;
+    }
+    
+    .corner-top-left,
+    .corner-top-right {
+        top: 20px;
+    }
+    
+    .corner-top-left,
+    .corner-bottom-left {
+        left: 20px;
+    }
+    
+    .corner-top-right,
+    .corner-bottom-right {
+        right: 20px;
+    }
+    
+    .corner-bottom-left,
+    .corner-bottom-right {
+        bottom: 20px;
+    }
+    
+    .floating-decor {
+        font-size: 1.2rem;
+    }
+    
     .card-cover-content {
         padding: var(--spacing-lg);
         max-width: 90%;

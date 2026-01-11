@@ -47,22 +47,31 @@
     <div id="invitation-card" class="card-container">
         <!-- Card Front (Closed State) -->
         <div id="card-front" class="card-front">
-            <div class="card-cover-content">
-                <div class="floral-decoration top"></div>
-                <div class="ganesh-symbol">
-                    <img src="images/ganesh.png" alt="Shri Ganesh" class="ganesh-img">
-                    <p class="sanskrit-invocation">॥ श्री गणेशाय नमः ॥</p>
+            <!-- Four Corner Mandalas -->
+            <div class="mandala-corner mandala-top-left"></div>
+            <div class="mandala-corner mandala-top-right"></div>
+            <div class="mandala-corner mandala-bottom-left"></div>
+            <div class="mandala-corner mandala-bottom-right"></div>
+            
+            <!-- Central Large Mandala (Rotating) -->
+            <div class="mandala-central"></div>
+            
+            <!-- Content Overlay (Static) -->
+            <div class="card-cover-content-new">
+                <div class="ganesh-center">
+                    <img src="images/ganesh.png" alt="Shri Ganesh" class="ganesh-img-cover">
+                    <p class="sanskrit-cover">॥ श्री गणेशाय नमः ॥</p>
                 </div>
-                <div class="cover-text">
-                    <h1 class="couple-names-cover">Riya <span class="ampersand">&</span> Lavesh</h1>
-                    <p class="wedding-text">Wedding Invitation</p>
+                <div class="names-layout">
+                    <h2 class="bride-name-cover">Riya</h2>
+                    <h2 class="groom-name-cover">Lavesh</h2>
                 </div>
+                <p class="wedding-text-new">Wedding Invitation</p>
                 <div class="tap-instruction">
                     <span class="tap-icon">✨</span>
                     <p>Tap to Open</p>
                     <span class="tap-icon">✨</span>
                 </div>
-                <div class="floral-decoration bottom"></div>
             </div>
         </div>
         

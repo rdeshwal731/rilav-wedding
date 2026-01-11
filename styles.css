@@ -93,99 +93,100 @@ body {
     justify-content: center;
     cursor: pointer;
     transition: var(--transition-smooth);
-    box-shadow: 0 10px 40px rgba(255, 140, 0, 0.2);
-    position: relative;
     overflow: hidden;
 }
 
-/* Large visible mandala background - rotating */
-.card-front::before {
-    content: '';
+/* Four Corner Mandalas - Rotating Circles */
+.mandala-corner {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 700px;
-    height: 700px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
     background-image: 
-        /* Outer petal ring */
-        repeating-conic-gradient(from 0deg at 50% 50%, 
-            #FFD700 0deg 7.5deg, 
-            #FF8C00 7.5deg 15deg, 
-            #FFD700 15deg 22.5deg,
-            #FFA500 22.5deg 30deg
+        repeating-conic-gradient(from 0deg, 
+            #FFD700 0deg 15deg, 
+            #FF8C00 15deg 30deg,
+            #FFA500 30deg 45deg,
+            #FFD700 45deg 60deg
         ),
-        /* Middle ring with gaps */
-        repeating-conic-gradient(from 7.5deg at 50% 50%,
-            #FF6B00 0deg 5deg,
-            transparent 5deg 10deg,
-            #FFD700 10deg 15deg,
-            transparent 15deg 20deg
+        radial-gradient(circle, 
+            #FFD700 0%, #FF8C00 20%, transparent 25%,
+            transparent 35%, #FFA500 35%, #FFD700 40%, transparent 42%,
+            transparent 50%, rgba(255, 140, 0, 0.6) 50%, transparent 52%
+        );
+    animation: mandalaRotate 40s linear infinite;
+    opacity: 0.7;
+    box-shadow: 0 0 30px rgba(255, 140, 0, 0.4);
+}
+
+.mandala-top-left {
+    top: 50px;
+    left: 50px;
+}
+
+.mandala-top-right {
+    top: 50px;
+    right: 50px;
+    animation-direction: reverse;
+}
+
+.mandala-bottom-left {
+    bottom: 50px;
+    left: 50px;
+    animation-delay: -10s;
+}
+
+.mandala-bottom-right {
+    bottom: 50px;
+    right: 50px;
+    animation-direction: reverse;
+    animation-delay: -20s;
+}
+
+/* Large Central Mandala - Rotating Circle */
+.mandala-central {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background-image: 
+        /* Outer ornate petals */
+        repeating-conic-gradient(from 0deg, 
+            #FFD700 0deg 10deg, 
+            #FF8C00 10deg 20deg,
+            #FFA500 20deg 30deg
+        ),
+        /* Middle layer */
+        repeating-conic-gradient(from 5deg,
+            #FFA500 0deg 7.5deg,
+            transparent 7.5deg 15deg
         ),
         /* Inner decorative ring */
-        repeating-conic-gradient(from 0deg at 50% 50%,
-            rgba(255, 215, 0, 0.8) 0deg 3deg,
+        repeating-conic-gradient(from 0deg,
+            rgba(255, 215, 0, 0.9) 0deg 3deg,
             transparent 3deg 6deg
         ),
         /* Concentric circles */
-        radial-gradient(circle at center, 
-            #FFD700 0%, 
-            #FF8C00 5%,
-            transparent 8%,
-            transparent 15%,
-            #FFA500 15%,
-            #FFD700 18%,
-            transparent 20%,
-            transparent 28%,
-            #FF8C00 28%,
-            #FFD700 31%,
-            transparent 33%,
-            transparent 40%,
-            rgba(255, 140, 0, 0.6) 40%,
-            rgba(255, 215, 0, 0.7) 43%,
-            transparent 45%
+        radial-gradient(circle, 
+            transparent 0%, transparent 15%,
+            #FFD700 15%, #FF8C00 18%, transparent 20%,
+            transparent 28%, #FFA500 28%, #FFD700 31%, transparent 33%,
+            transparent 38%, #FF8C00 38%, transparent 41%,
+            transparent 45%, rgba(255, 140, 0, 0.8) 45%, rgba(255, 215, 0, 0.9) 48%, transparent 50%
         );
-    background-size: 100% 100%;
-    opacity: 0.5;
-    animation: mandalaRotate 60s linear infinite;
-    pointer-events: none;
-    filter: drop-shadow(0 0 20px rgba(255, 140, 0, 0.3));
-}
-
-/* Corner mandala decorations - actual decorative elements */
-.card-front::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image:
-        /* Top-left mandala */
-        radial-gradient(circle at 12% 12%, 
-            #FFD700 0%, #FF8C00 3%, transparent 6%, 
-            transparent 8%, #FFA500 8%, transparent 11%),
-        /* Top-right mandala */
-        radial-gradient(circle at 88% 12%, 
-            #FFD700 0%, #FF8C00 3%, transparent 6%, 
-            transparent 8%, #FFA500 8%, transparent 11%),
-        /* Bottom-left mandala */
-        radial-gradient(circle at 12% 88%, 
-            #FFD700 0%, #FF8C00 3%, transparent 6%, 
-            transparent 8%, #FFA500 8%, transparent 11%),
-        /* Bottom-right mandala */
-        radial-gradient(circle at 88% 88%, 
-            #FFD700 0%, #FF8C00 3%, transparent 6%, 
-            transparent 8%, #FFA500 8%, transparent 11%);
-    animation: mandalaRotate 80s linear infinite reverse;
-    pointer-events: none;
-    opacity: 0.7;
+    animation: mandalaRotate 50s linear infinite;
+    opacity: 0.6;
+    box-shadow: 
+        0 0 50px rgba(255, 140, 0, 0.5),
+        inset 0 0 50px rgba(255, 215, 0, 0.2);
 }
 
 @keyframes mandalaRotate {
     from {
-        transform: translate(-50%, -50%) rotate(0deg);
+        transform: rotate(0deg);
     }
     to {
-        transform: translate(-50%, -50%) rotate(360deg);
+        transform: rotate(360deg);
     }
 }
 
@@ -197,19 +198,69 @@ body {
 }
 
 .card-cover-content {
-    text-align: center;
-    padding: var(--spacing-xl);
-    max-width: 550px;
+    display: none;
+}
+
+.card-cover-content-new {
     position: relative;
-    z-index: 2;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-md);
     animation: fadeInScale 1s ease-out;
-    background: rgba(255, 255, 255, 0.85);
-    border-radius: 25px;
-    box-shadow: 
-        0 20px 60px rgba(255, 140, 0, 0.3),
-        0 0 0 2px rgba(255, 215, 0, 0.4),
-        inset 0 0 30px rgba(255, 215, 0, 0.1);
-    border: 3px solid rgba(255, 140, 0, 0.3);
+}
+
+.ganesh-center {
+    text-align: center;
+    position: relative;
+    z-index: 11;
+}
+
+.ganesh-img-cover {
+    width: 100px;
+    height: auto;
+    filter: drop-shadow(0 5px 15px rgba(255, 140, 0, 0.4));
+    margin-bottom: var(--spacing-sm);
+}
+
+.sanskrit-cover {
+    font-family: var(--font-sanskrit);
+    font-size: 1.4rem;
+    color: #1B5E20;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+}
+
+.names-layout {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+    position: relative;
+    z-index: 11;
+}
+
+.bride-name-cover,
+.groom-name-cover {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    background: linear-gradient(135deg, #FF6B00 0%, #FF8C00 30%, #FFD700 60%, #FF6B00 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+    text-shadow: 2px 2px 6px rgba(255, 140, 0, 0.3);
+    margin: 0;
+}
+
+.wedding-text-new {
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+    text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8);
+    margin-bottom: var(--spacing-lg);
 }
 
 @keyframes fadeInScale {

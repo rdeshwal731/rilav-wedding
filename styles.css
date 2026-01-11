@@ -314,6 +314,21 @@ section.revealed {
     z-index: 0;
 }
 
+/* Desktop adjustment - show more from top to avoid cropping head */
+@media (min-width: 769px) {
+    .couple-photo-bg {
+        background-position: 50% 35%;
+    }
+}
+
+/* Keep mobile perfect as it is */
+@media (max-width: 768px) {
+    .couple-photo-bg {
+        background-position: center center;
+        background-size: cover;
+    }
+}
+
 .hero-content {
     text-align: center;
     position: relative;

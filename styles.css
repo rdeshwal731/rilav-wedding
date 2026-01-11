@@ -105,59 +105,79 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 600px;
-    height: 600px;
+    width: 700px;
+    height: 700px;
     background-image: 
-        /* Outer decorative ring */
+        /* Outer petal ring */
         repeating-conic-gradient(from 0deg at 50% 50%, 
-            #FFD700 0deg 5deg, 
-            transparent 5deg 10deg, 
-            #FF8C00 10deg 15deg,
-            transparent 15deg 20deg,
-            #FFD700 20deg 25deg,
-            transparent 25deg 30deg
+            #FFD700 0deg 7.5deg, 
+            #FF8C00 7.5deg 15deg, 
+            #FFD700 15deg 22.5deg,
+            #FFA500 22.5deg 30deg
         ),
-        /* Middle ring - petals */
-        repeating-conic-gradient(from 15deg at 50% 50%,
-            #FF6B00 0deg 10deg,
-            transparent 10deg 20deg,
-            #FFD700 20deg 30deg,
-            transparent 30deg 40deg
+        /* Middle ring with gaps */
+        repeating-conic-gradient(from 7.5deg at 50% 50%,
+            #FF6B00 0deg 5deg,
+            transparent 5deg 10deg,
+            #FFD700 10deg 15deg,
+            transparent 15deg 20deg
         ),
-        /* Inner decorative dots */
-        radial-gradient(circle, #FFD700 2%, transparent 2%),
-        /* Center circle */
+        /* Inner decorative ring */
+        repeating-conic-gradient(from 0deg at 50% 50%,
+            rgba(255, 215, 0, 0.8) 0deg 3deg,
+            transparent 3deg 6deg
+        ),
+        /* Concentric circles */
         radial-gradient(circle at center, 
             #FFD700 0%, 
-            #FF8C00 15%, 
-            transparent 25%,
-            transparent 35%,
-            rgba(255, 140, 0, 0.3) 35%,
-            rgba(255, 140, 0, 0.3) 37%,
-            transparent 37%,
-            transparent 45%,
-            rgba(255, 215, 0, 0.4) 45%,
-            rgba(255, 215, 0, 0.4) 47%,
-            transparent 47%
+            #FF8C00 5%,
+            transparent 8%,
+            transparent 15%,
+            #FFA500 15%,
+            #FFD700 18%,
+            transparent 20%,
+            transparent 28%,
+            #FF8C00 28%,
+            #FFD700 31%,
+            transparent 33%,
+            transparent 40%,
+            rgba(255, 140, 0, 0.6) 40%,
+            rgba(255, 215, 0, 0.7) 43%,
+            transparent 45%
         );
-    background-size: 100% 100%, 100% 100%, 40px 40px, 100% 100%;
-    background-position: center, center, center, center;
-    opacity: 0.35;
-    animation: mandalaRotate 80s linear infinite;
+    background-size: 100% 100%;
+    opacity: 0.5;
+    animation: mandalaRotate 60s linear infinite;
     pointer-events: none;
+    filter: drop-shadow(0 0 20px rgba(255, 140, 0, 0.3));
 }
 
-/* Corner mandala decorations */
+/* Corner mandala decorations - actual decorative elements */
 .card-front::after {
-    content: '🪔 ✦ 🪔';
+    content: '';
     position: absolute;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 2rem;
-    opacity: 0.6;
-    letter-spacing: 100px;
-    animation: flicker 3s ease-in-out infinite;
+    width: 100%;
+    height: 100%;
+    background-image:
+        /* Top-left mandala */
+        radial-gradient(circle at 12% 12%, 
+            #FFD700 0%, #FF8C00 3%, transparent 6%, 
+            transparent 8%, #FFA500 8%, transparent 11%),
+        /* Top-right mandala */
+        radial-gradient(circle at 88% 12%, 
+            #FFD700 0%, #FF8C00 3%, transparent 6%, 
+            transparent 8%, #FFA500 8%, transparent 11%),
+        /* Bottom-left mandala */
+        radial-gradient(circle at 12% 88%, 
+            #FFD700 0%, #FF8C00 3%, transparent 6%, 
+            transparent 8%, #FFA500 8%, transparent 11%),
+        /* Bottom-right mandala */
+        radial-gradient(circle at 88% 88%, 
+            #FFD700 0%, #FF8C00 3%, transparent 6%, 
+            transparent 8%, #FFA500 8%, transparent 11%);
+    animation: mandalaRotate 80s linear infinite reverse;
+    pointer-events: none;
+    opacity: 0.7;
 }
 
 @keyframes mandalaRotate {
@@ -166,15 +186,6 @@ body {
     }
     to {
         transform: translate(-50%, -50%) rotate(360deg);
-    }
-}
-
-@keyframes flicker {
-    0%, 100% {
-        opacity: 0.6;
-    }
-    50% {
-        opacity: 0.9;
     }
 }
 

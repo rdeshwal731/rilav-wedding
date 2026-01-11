@@ -1125,6 +1125,8 @@ section.revealed {
     margin-top: var(--spacing-xl);
     padding-top: var(--spacing-lg);
     border-top: 2px solid var(--botanical-green);
+    text-align: center;
+    width: 100%;
 }
 
 .footer-quote p {
@@ -1132,6 +1134,7 @@ section.revealed {
     font-size: 1.2rem;
     color: var(--text-light);
     font-style: italic;
+    margin: 0 auto;
 }
 
 /* ============================================

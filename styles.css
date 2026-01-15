@@ -888,14 +888,6 @@ section:last-child {
         font-size: 0.95rem;
     }
     
-    .wedding-logo {
-        margin: var(--spacing-sm) 0;
-    }
-    
-    .logo-image {
-        max-width: 220px;
-    }
-    
     .tap-instruction p {
         font-size: 0.9rem;
     }

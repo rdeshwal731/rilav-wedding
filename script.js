@@ -386,6 +386,33 @@
     }
     
     // ============================================
+    // VENUE LINK MOBILE FIX
+    // ============================================
+    function initVenueLink() {
+        const venueLink = document.getElementById('venue-link');
+        const venueAddress = document.getElementById('venue-address');
+        const venueAddressMobile = document.getElementById('venue-address-mobile');
+        
+        if (!venueLink || !venueAddress || !venueAddressMobile) return;
+        
+        // Check if mobile device
+        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
+        
+        if (isMobile) {
+            // Use Google Maps directions URL for mobile
+            venueLink.href = 'https://www.google.com/maps/dir/?api=1&destination=2MC7+QH+Meerut,+Uttar+Pradesh';
+            // Show mobile address, hide desktop address
+            venueAddress.style.display = 'none';
+            venueAddressMobile.style.display = 'block';
+        } else {
+            // Keep desktop link
+            venueLink.href = 'https://maps.app.goo.gl/76QRtZY78HGVfWQEA';
+            venueAddress.style.display = 'block';
+            venueAddressMobile.style.display = 'none';
+        }
+    }
+    
+    // ============================================
     // INITIALIZATION
     // ============================================
     function init() {
@@ -402,6 +429,9 @@
         
         // Handle music errors
         handleMusicError();
+        
+        // Initialize venue link (mobile vs desktop)
+        initVenueLink();
         
         // Card opening - REMOVED: No longer opens on card click
         // Only opens via "Tap to Open" button (handled in initMobileInteractions)

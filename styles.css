@@ -1410,6 +1410,13 @@ section.revealed {
     line-height: 1.6;
 }
 
+.venue-address-mobile {
+    font-size: 1rem;
+    opacity: 0.9;
+    line-height: 1.6;
+    margin-top: var(--spacing-xs);
+}
+
 /* ============================================
    FOOTER SECTION
    ============================================ */

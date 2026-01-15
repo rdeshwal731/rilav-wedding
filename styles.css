@@ -64,7 +64,6 @@ body {
     color: var(--text-dark);
     overflow-x: hidden;
     min-height: 100vh;
-    max-height: 100vh;
     position: relative;
     margin: 0;
     padding: 0;

@@ -918,7 +918,7 @@ section.revealed {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    opacity: 0.08;
+    opacity: 0.18;
     filter: blur(2px);
     z-index: 0;
 }
@@ -1176,7 +1176,7 @@ section.revealed {
     background-size: cover;
     background-position: 50% 50%;
     background-repeat: no-repeat;
-    opacity: 0.08;
+    opacity: 0.18;
     clip-path: polygon(30% 0, 100% 0, 100% 100%, 0% 100%);
     will-change: transform;
 }
@@ -1186,7 +1186,7 @@ section.revealed {
         width: 100%;
         left: 0;
         right: auto;
-        opacity: 0.05;
+        opacity: 0.15;
         background-position: center center;
         clip-path: none;
         background-size: cover;
@@ -1518,7 +1518,7 @@ section.revealed {
     background-position: 50% 15%;
     background-repeat: no-repeat;
     background-attachment: scroll;
-    opacity: 0.06;
+    opacity: 0.16;
     filter: blur(3px);
     z-index: 0;
 }

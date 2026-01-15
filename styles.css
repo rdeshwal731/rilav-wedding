@@ -510,7 +510,7 @@ body {
     height: 100%;
     pointer-events: none;
     z-index: 9999;
-    overflow: visible;
+    overflow: hidden;
 }
 
 .petal {
@@ -626,7 +626,7 @@ body {
         opacity: 0.5;
     }
     100% {
-        top: 110%;
+        top: 100%;
         transform: translateX(30px) rotate(360deg);
         opacity: 0;
         visibility: hidden;
@@ -660,7 +660,7 @@ body {
         opacity: 0.5;
     }
     100% {
-        top: 110%;
+        top: 100%;
         transform: translateX(-40px) rotate(450deg);
         opacity: 0;
         visibility: hidden;
@@ -698,7 +698,7 @@ body {
         opacity: 0.4;
     }
     100% {
-        top: 110%;
+        top: 100%;
         transform: translateX(10px) rotate(400deg);
         opacity: 0;
         visibility: hidden;

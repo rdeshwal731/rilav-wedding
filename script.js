@@ -191,10 +191,32 @@
     // TOUCH INTERACTIONS FOR MOBILE
     // ============================================
     function initMobileInteractions() {
-        // Prevent default zoom on double-tap for card
-        cardFront.addEventListener('touchend', (e) => {
+        // Get the tap instruction button
+        const tapInstruction = document.querySelector('.tap-instruction');
+        
+        // Only allow opening via the Tap to Open button, not by swiping/clicking anywhere
+        if (tapInstruction) {
+            tapInstruction.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                openCard();
+            });
+            
+            tapInstruction.addEventListener('touchend', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                openCard();
+            }, { passive: false });
+        }
+        
+        // Prevent card from opening on accidental swipe/scroll
+        cardFront.addEventListener('touchmove', (e) => {
+            // Allow touchmove but don't open card
+        }, { passive: true });
+        
+        // Prevent card from opening on scroll
+        cardFront.addEventListener('wheel', (e) => {
             e.preventDefault();
-            openCard();
         }, { passive: false });
         
         // Allow normal touch events for calendar button
@@ -381,8 +403,8 @@
         // Handle music errors
         handleMusicError();
         
-        // Card opening event listeners
-        cardFront.addEventListener('click', openCard);
+        // Card opening - REMOVED: No longer opens on card click
+        // Only opens via "Tap to Open" button (handled in initMobileInteractions)
         
         // Mobile touch interactions
         initMobileInteractions();

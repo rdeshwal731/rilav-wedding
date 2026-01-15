@@ -399,10 +399,9 @@
         const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
         
         if (isMobile) {
-            // Use Google Maps directions URL for mobile - properly encode Plus Code
-            // Plus sign (+) needs to be encoded as %2B in URL
-            const plusCode = encodeURIComponent('2MC7+QH Meerut, Uttar Pradesh');
-            venueLink.href = 'https://www.google.com/maps/dir/?api=1&destination=' + plusCode;
+            // Use Google Maps directions URL for mobile with coordinates
+            // Coordinates: 29.0219376, 77.6639374
+            venueLink.href = 'https://www.google.com/maps/dir/?api=1&destination=29.0219376,77.6639374';
             // Show mobile address, hide desktop address
             venueAddress.style.display = 'none';
             venueAddressMobile.style.display = 'block';

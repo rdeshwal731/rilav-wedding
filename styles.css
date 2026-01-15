@@ -444,14 +444,24 @@ body {
     align-items: center;
     margin: var(--spacing-md) 0;
     animation: fadeInScale 1s ease-out;
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    min-height: 100px;
 }
 
 .logo-image {
     max-width: 280px;
-    width: 100%;
+    width: auto;
     height: auto;
+    max-height: 200px;
     object-fit: contain;
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: relative;
+    z-index: 10;
 }
 
 .tap-instruction {

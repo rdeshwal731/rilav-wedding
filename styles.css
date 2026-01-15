@@ -1176,7 +1176,7 @@ section.revealed {
     background-size: cover;
     background-position: 50% 50%;
     background-repeat: no-repeat;
-    opacity: 0.18;
+    opacity: 0.28;
     clip-path: polygon(30% 0, 100% 0, 100% 100%, 0% 100%);
     will-change: transform;
 }
@@ -1186,7 +1186,7 @@ section.revealed {
         width: 100%;
         left: 0;
         right: auto;
-        opacity: 0.15;
+        opacity: 0.25;
         background-position: center center;
         clip-path: none;
         background-size: cover;
@@ -1221,7 +1221,7 @@ section.revealed {
 }
 
 .date-venue-card {
-    background: linear-gradient(135deg, #FFFFFF 0%, #FFF9C4 100%);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.75) 0%, rgba(255, 249, 196, 0.75) 100%);
     border-radius: 20px;
     padding: var(--spacing-lg);
     box-shadow: 0 10px 40px rgba(255, 107, 157, 0.2);
@@ -1229,6 +1229,7 @@ section.revealed {
     border: 3px solid transparent;
     background-clip: padding-box;
     position: relative;
+    backdrop-filter: blur(5px);
 }
 
 .date-venue-card::before {
@@ -1285,9 +1286,10 @@ section.revealed {
     align-items: center;
     gap: var(--spacing-md);
     padding: var(--spacing-sm);
-    background: var(--cream-bg);
+    background: rgba(255, 248, 240, 0.7);
     border-radius: 12px;
     transition: var(--transition-fast);
+    backdrop-filter: blur(3px);
 }
 
 .event-item:hover {
@@ -1319,12 +1321,13 @@ section.revealed {
 }
 
 .venue-card {
-    background: linear-gradient(135deg, #FF6B9D 0%, #C2185B 50%, #7B1FA2 100%);
+    background: linear-gradient(135deg, rgba(255, 107, 157, 0.8) 0%, rgba(194, 24, 91, 0.8) 50%, rgba(123, 31, 162, 0.8) 100%);
     color: white;
     padding: var(--spacing-lg);
     border-radius: 20px;
     text-align: center;
     box-shadow: 0 10px 30px rgba(123, 31, 162, 0.4);
+    backdrop-filter: blur(5px);
 }
 
 .venue-heading {

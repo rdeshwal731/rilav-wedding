@@ -433,9 +433,25 @@ body {
     color: var(--text-light);
     letter-spacing: 2px;
     text-transform: uppercase;
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
     text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
     font-weight: 500;
+}
+
+.wedding-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: var(--spacing-md) 0;
+    animation: fadeInScale 1s ease-out;
+}
+
+.logo-image {
+    max-width: 280px;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
 }
 
 .tap-instruction {
@@ -718,7 +734,7 @@ section {
     justify-content: center;
     position: relative;
     padding: var(--spacing-lg) var(--spacing-md);
-    overflow: visible;
+    overflow: hidden;
     z-index: 1;
     margin: 0;
 }
@@ -860,6 +876,14 @@ section:last-child {
     
     .wedding-text {
         font-size: 0.95rem;
+    }
+    
+    .wedding-logo {
+        margin: var(--spacing-sm) 0;
+    }
+    
+    .logo-image {
+        max-width: 220px;
     }
     
     .tap-instruction p {

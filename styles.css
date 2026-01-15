@@ -181,10 +181,7 @@ body {
     position: relative;
     z-index: 10;
     animation: fadeInScale 1s ease-out;
-    background: rgba(245, 245, 220, 0.7); /* Semi-transparent cream background for readability */
-    border-radius: 20px;
-    backdrop-filter: blur(5px);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    background: transparent;
 }
 
 /* Circular Wreath Frame */
@@ -429,13 +426,13 @@ body {
 }
 
 .wedding-text {
-    font-size: 1.1rem;
-    color: #8B7355; /* Warm brown/gray matching logo text */
-    letter-spacing: 2px;
+    font-size: 1.5rem;
+    color: #CD7F32; /* Bronze matching logo theme */
+    letter-spacing: 3px;
     text-transform: uppercase;
-    margin-bottom: var(--spacing-md);
-    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.9);
-    font-weight: 500;
+    margin-bottom: var(--spacing-lg);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), 0 0 10px rgba(255, 255, 255, 0.8);
+    font-weight: 600;
 }
 
 .wedding-logo {
@@ -486,11 +483,11 @@ body {
 }
 
 .tap-instruction p {
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: #CD7F32; /* Bronze matching logo theme */
-    font-weight: 500;
-    letter-spacing: 1px;
-    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.9);
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), 0 0 10px rgba(255, 255, 255, 0.8);
 }
 
 .tap-icon {

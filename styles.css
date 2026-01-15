@@ -1183,9 +1183,25 @@ section.revealed {
 
 @media (max-width: 768px) {
     .couple-photo-side {
-        width: 50%;
+        width: 100%;
+        left: 0;
+        right: auto;
         opacity: 0.05;
         background-position: center center;
+        clip-path: none;
+        background-size: cover;
+    }
+    
+    .details-section {
+        padding-left: var(--spacing-md);
+        padding-right: var(--spacing-md);
+        justify-content: center;
+    }
+    
+    .details-content {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
     }
 }
 

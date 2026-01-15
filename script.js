@@ -386,7 +386,7 @@
     }
     
     // ============================================
-    // VENUE LINK MOBILE FIX
+    // VENUE LINK MOBILE FIX WITH FAILSAFE
     // ============================================
     function initVenueLink() {
         const venueLink = document.getElementById('venue-link');
@@ -397,11 +397,53 @@
         
         // Check if mobile device
         const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
+        const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+        const isAndroid = /Android/i.test(navigator.userAgent);
+        
+        // Coordinates: 29.0219376, 77.6639374
+        const lat = 29.0219376;
+        const lng = 77.6639374;
         
         if (isMobile) {
-            // Use Google Maps directions URL for mobile with coordinates
-            // Coordinates: 29.0219376, 77.6639374
-            venueLink.href = 'https://www.google.com/maps/dir/?api=1&destination=29.0219376,77.6639374';
+            // Universal web URL that works in any browser (Safari, Chrome, Firefox, etc.)
+            const webUrl = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`;
+            
+            // Try native apps first, fallback to web
+            venueLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // iOS: Try Apple Maps first, then Google Maps app, then web
+                if (isIOS) {
+                    // Try Apple Maps
+                    const appleMapsUrl = `maps://maps.apple.com/?daddr=${lat},${lng}&dirflg=d`;
+                    window.location.href = appleMapsUrl;
+                    
+                    // Fallback to web if Apple Maps doesn't open (after short delay)
+                    setTimeout(function() {
+                        // If still on page, open web version
+                        window.open(webUrl, '_blank');
+                    }, 500);
+                }
+                // Android: Try Google Maps app, then web
+                else if (isAndroid) {
+                    // Try Google Maps app
+                    const googleMapsApp = `google.navigation:q=${lat},${lng}`;
+                    window.location.href = googleMapsApp;
+                    
+                    // Fallback to web if app doesn't open (after short delay)
+                    setTimeout(function() {
+                        window.open(webUrl, '_blank');
+                    }, 500);
+                }
+                // Other mobile: Use web URL directly
+                else {
+                    window.open(webUrl, '_blank');
+                }
+            });
+            
+            // Set href as fallback (works if JavaScript fails)
+            venueLink.href = webUrl;
+            
             // Show mobile address, hide desktop address
             venueAddress.style.display = 'none';
             venueAddressMobile.style.display = 'block';

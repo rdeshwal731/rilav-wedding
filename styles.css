@@ -93,7 +93,7 @@ body {
     background: #F5F5DC; /* Cream background from logo */
     background-image: url('images/wedding-logo.jpeg');
     background-size: cover;
-    background-position: center calc(50% + 2in);
+    background-position: center 60%;
     background-repeat: no-repeat;
     z-index: 1000;
     display: flex;
